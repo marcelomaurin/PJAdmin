@@ -199,9 +199,9 @@ object frmconfig: Tfrmconfig
     TabOrder = 2
   end
   object btDelete: TBitBtn
-    Left = 9
+    Left = 10
     Height = 38
-    Top = 128
+    Top = 168
     Width = 103
     Caption = 'DEL DB'
     Glyph.Data = {
@@ -340,25 +340,25 @@ object frmconfig: Tfrmconfig
     TabOrder = 3
   end
   object Label3: TLabel
-    Left = 9
+    Left = 10
     Height = 15
-    Top = 108
+    Top = 148
     Width = 112
     Caption = 'Database Operations:'
     ParentColor = False
   end
   object Label4: TLabel
-    Left = 9
+    Left = 10
     Height = 15
-    Top = 176
+    Top = 216
     Width = 61
     Caption = 'Print Setup:'
     ParentColor = False
   end
   object btDelete1: TBitBtn
-    Left = 8
+    Left = 9
     Height = 38
-    Top = 192
+    Top = 232
     Width = 103
     Caption = 'Print Setup'
     Glyph.Data = {
@@ -496,8 +496,32 @@ object frmconfig: Tfrmconfig
     OnClick = btDelete1Click
     TabOrder = 4
   end
-  object PrinterSetupDialog1: TPrinterSetupDialog
-    Left = 184
+  object Label5: TLabel
+    Left = 10
+    Height = 15
     Top = 104
+    Width = 85
+    Caption = 'Files Repository:'
+    ParentColor = False
+  end
+  object edFileRepo: TFileNameEdit
+    Left = 8
+    Height = 23
+    Top = 120
+    Width = 290
+    FileName = 'edFileRepo'
+    DialogTitle = 'Search File Repository'
+    Filter = 'ALL|*.*'
+    FilterIndex = 0
+    HideDirectories = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 5
+    Text = 'edFileRepo'
+  end
+  object PrinterSetupDialog1: TPrinterSetupDialog
+    Left = 185
+    Top = 144
   end
 end

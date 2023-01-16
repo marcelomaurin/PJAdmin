@@ -510,7 +510,7 @@ object frmconfig: Tfrmconfig
     Top = 120
     Width = 290
     FileName = 'edFileRepo'
-    DialogTitle = 'Search File Repository'
+    DialogTitle = 'Search Database Location'
     Filter = 'ALL|*.*'
     FilterIndex = 0
     HideDirectories = False

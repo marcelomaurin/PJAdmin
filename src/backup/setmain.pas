@@ -36,6 +36,7 @@ type
         FSQLLITEDLL : string;
         FCSVFOLDER : String;
         FDB : string;
+        FFILEREPO : string;
         //filename : String;
         procedure SetDevice(const Value : Boolean);
         procedure SetPOSX(value : integer);
@@ -59,6 +60,7 @@ type
         property SQLLITEDLL: String read FSQLLITEDLL write FSQLLITEDLL;
         property CSVFOLDER: String read FCSVFOLDER write FCSVFOLDER;
         property db: String read Fdb write Fdb;
+        property FileRepo: String read FFileRepo write Fd;
   end;
 
   var
@@ -82,9 +84,9 @@ begin
     fposx := 317;
     fposy := 771;
     FSQLLITEDLL := ExtractFilePath(ApplicationName)+'\sqlite\win64\sqlite3.dll';
-    FDB := ExtractFilePath(ApplicationName)+'\db\etiqueta.db';
+    FDB := ExtractFilePath(ApplicationName)+'\db\pjdb.db';
     FCSVFOLDER := ExtractFilePath(ApplicationName)+'\csv\etiquetas.csv';
-
+    FFILEREPO := ExtractFilePath(ApplicationName)+'\files\';
 end;
 
 procedure TSetMain.SetPOSX(value: integer);
@@ -161,6 +163,10 @@ begin
     begin
       FCSVFOLDER := RetiraInfo(arquivo.Strings[posicao]);
     end;
+    if  BuscaChave(arquivo,'FILEREPO:',posicao) then
+    begin
+      FFILEREPO := RetiraInfo(arquivo.Strings[posicao]);
+    end;
 end;
 
 
@@ -228,6 +234,7 @@ begin
   arquivo.Append('WIDTH:'+inttostr(FWIDTH));
   arquivo.Append('SQLLITEDLL:'+FSQLLITEDLL);
   arquivo.Append('CSVFOLDER:'+FCSVFOLDER);
+  arquivo.Append('FILEREPO:'+FFILEREPO);
   arquivo.Append('DB:'+FDB);
 
 
