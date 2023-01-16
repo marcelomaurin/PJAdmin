@@ -1,0 +1,104 @@
+object Relfiscal: TRelfiscal
+  Left = 428
+  Height = 498
+  Top = 300
+  Width = 849
+  Caption = 'Relfiscal'
+  ClientHeight = 498
+  ClientWidth = 849
+  LCLVersion = '2.2.2.0'
+  object RLReport1: TRLReport
+    Left = 24
+    Height = 1123
+    Top = 16
+    Width = 794
+    DataSource = dsrep
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 56
+      Top = 38
+      Width = 718
+      object RLLabel1: TRLLabel
+        Left = 272
+        Height = 16
+        Top = 20
+        Width = 188
+        Caption = 'Relatório de Fechamento Fiscal'
+      end
+    end
+    object RLDetailGrid1: TRLDetailGrid
+      Left = 38
+      Height = 40
+      Top = 94
+      Width = 718
+      object RLDBText1: TRLDBText
+        Left = 56
+        Height = 16
+        Top = 11
+        Width = 59
+        DataField = 'mesfiscal'
+        DataSource = dsrep
+      end
+      object RLLabel2: TRLLabel
+        Left = 16
+        Height = 16
+        Top = 11
+        Width = 33
+        Caption = 'Mês:'
+      end
+      object RLLabel3: TRLLabel
+        Left = 136
+        Height = 16
+        Top = 11
+        Width = 31
+        Caption = 'Ano:'
+      end
+      object RLDBText2: TRLDBText
+        Left = 168
+        Height = 16
+        Top = 11
+        Width = 55
+        DataField = 'anofiscal'
+        DataSource = dsrep
+      end
+      object RLLabel4: TRLLabel
+        Left = 240
+        Height = 16
+        Top = 11
+        Width = 66
+        Caption = 'Descrição:'
+      end
+      object RLDBText3: TRLDBText
+        Left = 304
+        Height = 16
+        Top = 11
+        Width = 196
+        DataField = 'descricao'
+        DataSource = dsrep
+      end
+      object RLLabel5: TRLLabel
+        Left = 544
+        Height = 16
+        Top = 11
+        Width = 46
+        Caption = 'Status:'
+      end
+      object RLDBText4: TRLDBText
+        Left = 592
+        Height = 16
+        Top = 11
+        Width = 40
+        DataField = 'status'
+        DataSource = dsrep
+      end
+    end
+  end
+  object dsrep: TDataSource
+    DataSet = dmBase.zreffiscal
+    Left = 115
+    Top = 248
+  end
+end

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
-  dmbase, setmain, config, AberturaFiscal, funcoes;
+  dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal;
 
 const versao = '0.01';
 
@@ -33,6 +33,7 @@ type
     procedure MICLOSEClick(Sender: TObject);
     procedure miconfigClick(Sender: TObject);
     procedure mifechamentoClick(Sender: TObject);
+    procedure miRelatorioClick(Sender: TObject);
   private
     procedure AbreMesFiscal();
     procedure FechaMesFiscal();
@@ -141,6 +142,14 @@ begin
   begin
     showmessage('Mes fiscal já fechado!');
   end;
+end;
+
+procedure Tfrmmain.miRelatorioClick(Sender: TObject);
+begin
+  frmrelfiscal := TfrmRelfiscal.create(self);
+  frmRelFiscal.preparaDados();
+  frmRelFiscal.Visualiza();
+
 end;
 
 procedure Tfrmmain.AbreMesFiscal();

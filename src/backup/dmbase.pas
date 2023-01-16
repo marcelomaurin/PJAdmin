@@ -52,6 +52,8 @@ type
     procedure atualizaversao( versao: string);
     function MesFiscalAberto(): boolean;
     function AbreMesFiscal( mes: string; ano: string; descricao : string): boolean;
+    function OpenMesFiscal( ): boolean;
+    function CloseMesFiscal( ): boolean;
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
   end;
@@ -348,13 +350,42 @@ begin
   result:= resultado;
 end;
 
+function TdmBase.OpenMesFiscal: boolean;
+var
+   resultado : boolean;
+begin
+  resultado := true;
+  try
+    zreffiscal.open;
+  except
+    resultado := false;
+  end;
+
+  result:= resultado;
+end;
+
+function TdmBase.CloseMesFiscal: boolean;
+var
+   resultado : boolean;
+begin
+  resultado := true;
+  try
+    zreffiscal.close();
+  except
+    resultado := false;
+  end;
+
+  result:= resultado;
+end;
+
+
 function TdmBase.PesquisaMesFiscal(mes: string; ano: string): boolean;
 var
    resultado : boolean;
 begin
      resultado := false;
      zqry.close;
-     zqry.sql.Text := 'select * from reffiscal where mesfiscal = "'+mes+'" and anofiscal="'+ano+'" ';
+     zqry.sql.Text := 'select * from reffiscal where mesfiscal = "'+mes+'" and anofiscal="'+ano+'" order by status, anofiscal, desc mesfiscal';
      zqry.open;
      if not zqry.IsEmpty then
      begin
@@ -375,7 +406,7 @@ begin
         zqry.ExecSQL;
         zqry.close;
 
-     excepr
+     except
        resultado := false;
      end;
      result := resultado;

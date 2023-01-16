@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="frce"/>
+      </Item>
+      <Item>
         <PackageName Value="FCL"/>
       </Item>
       <Item>
@@ -82,8 +85,16 @@
         <Filename Value="aberturafiscal.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmAberturaFiscal"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AberturaFiscal"/>
+      </Unit>
+      <Unit>
+        <Filename Value="relfiscal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRelfiscal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

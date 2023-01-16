@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, printer4lazarus, rxnew, zcomponent, main, dmbase, funcoes, setmain,
-  config, AberturaFiscal
+  config, AberturaFiscal, relfiscal
   { you can add units after this };
 
 {$R *.res}
@@ -21,7 +21,6 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(Tfrmmain, frmmain);
-  Application.CreateForm(TfrmAberturaFiscal, frmAberturaFiscal);
   Application.Run;
 end.
 
