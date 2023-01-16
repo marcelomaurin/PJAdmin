@@ -12,17 +12,18 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="main.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="26"/>
-        <CursorPos Y="38"/>
-        <UsageCount Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="111"/>
+        <CursorPos X="21" Y="137"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,28 +33,28 @@
         <ComponentName Value="dmBase"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="70"/>
-        <CursorPos Y="105"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="39"/>
+        <CursorPos X="28" Y="56"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="funcoes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="21" Y="18"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="setmain.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="185"/>
         <CursorPos Y="209"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -62,142 +63,164 @@
         <ComponentName Value="frmconfig"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="13" Y="15"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="48" Y="17"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="470"/>
         <CursorPos Y="496"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcSqLiteUtils.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="217"/>
+        <CursorPos Y="241"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
+      <Unit>
+        <Filename Value="aberturafiscal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAberturaFiscal"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AberturaFiscal"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="58" Y="56"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="38" Column="3"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="9" Column="3"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="40" Column="12" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="46" Column="127" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="62" Column="20" TopLine="15"/>
-      </Position>
-      <Position>
-        <Filename Value="config.pas"/>
-        <Caret Line="9" Column="64"/>
+        <Filename Value="aberturafiscal.pas"/>
+        <Caret Line="51" TopLine="14"/>
       </Position>
       <Position>
         <Filename Value="dmbase.pas"/>
-        <Caret Line="32" Column="68" TopLine="14"/>
+        <Caret Line="55" Column="67" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="aberturafiscal.pas"/>
+        <Caret Line="44" Column="68" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="aberturafiscal.pas"/>
+        <Caret Line="56" Column="40" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="aberturafiscal.pas"/>
+        <Caret Line="49" Column="18" TopLine="20"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="110" Column="81" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="101" Column="23" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="38" Column="29" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="101" Column="23" TopLine="75"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="132" Column="22" TopLine="91"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="67" Column="27" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="102" Column="22" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="111" Column="18" TopLine="70"/>
       </Position>
       <Position>
         <Filename Value="dmbase.pas"/>
-        <Caret Line="36" Column="63" TopLine="32"/>
+        <Caret Line="56" Column="39" TopLine="32"/>
       </Position>
       <Position>
         <Filename Value="main.pas"/>
-        <Caret Line="44" Column="23" TopLine="26"/>
+        <Caret Line="150" Column="43" TopLine="104"/>
       </Position>
       <Position>
         <Filename Value="main.pas"/>
-        <Caret Line="41" Column="14" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="setmain.pas"/>
-        <Caret Line="209" Column="101" TopLine="185"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="39" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="40" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="41" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="42" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="43" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="44" TopLine="26"/>
+        <Caret Line="148" TopLine="111"/>
       </Position>
       <Position>
         <Filename Value="dmbase.pas"/>
-        <Caret Line="104" TopLine="73"/>
+        <Caret Line="370" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="371" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="372" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="373" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="374" TopLine="333"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="375" TopLine="334"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="379" TopLine="337"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="380" TopLine="337"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="379" Column="26" TopLine="334"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="367" Column="32" TopLine="326"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="56" Column="28" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="367" Column="32" TopLine="338"/>
       </Position>
       <Position>
         <Filename Value="main.pas"/>
-        <Caret Line="38" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="setmain.pas"/>
-        <Caret Line="209" TopLine="185"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="97" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="100" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="101" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="103" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="104" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
-        <Caret Line="494" TopLine="470"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
-        <Caret Line="495" TopLine="470"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
-        <Caret Line="496" TopLine="470"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="113" Column="7" TopLine="73"/>
+        <Caret Line="148" TopLine="111"/>
       </Position>
       <Position>
         <Filename Value="main.pas"/>
-        <Caret Line="38" TopLine="26"/>
+        <Caret Line="144" Column="36" TopLine="111"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -205,4 +228,36 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="aberturafiscal.pas"/>
+        <Line Value="62"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="dmbase.pas"/>
+        <Line Value="336"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="dmbase.pas"/>
+        <Line Value="371"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="main.pas"/>
+        <Line Value="158"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

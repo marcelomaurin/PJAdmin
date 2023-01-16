@@ -1,22 +1,23 @@
-object Form1: TForm1
-  Left = 1521
-  Height = 771
+object frmmain: Tfrmmain
+  Left = 1035
+  Height = 392
   Top = 156
-  Width = 317
+  Width = 803
   Caption = 'Controle de Contas PJ'
-  ClientHeight = 771
-  ClientWidth = 317
+  ClientHeight = 372
+  ClientWidth = 803
   Menu = MainMenu1
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   LCLVersion = '2.2.2.0'
   object imgconfig: TImage
-    Left = 200
+    Left = 16
     Height = 90
     Hint = 'Config'
-    Top = 656
+    Top = 264
     Width = 90
     OnClick = imgconfigClick
+    ParentShowHint = False
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869634D0D000089504E47
       0D0A1A0A0000000D49484452000000E1000000E10803000000096D2248000000
@@ -127,10 +128,42 @@ object Form1: TForm1
       C5178EFB63D2AAA9D0BA86BAF11B6EB8E1066FFC07D25BB7B926783B76000000
       0049454E44AE426082
     }
+    ShowHint = True
     Stretch = True
   end
   object MainMenu1: TMainMenu
     Left = 239
     Top = 174
+    object miOperacoes: TMenuItem
+      Caption = 'Operações'
+      object miMesFiscal: TMenuItem
+        Caption = 'Mês Fiscal'
+        object miabertura: TMenuItem
+          Caption = 'Abertura'
+          OnClick = miaberturaClick
+        end
+        object mifechamento: TMenuItem
+          Caption = 'Fechamento'
+          OnClick = mifechamentoClick
+        end
+        object Separator1: TMenuItem
+          Caption = '-'
+        end
+        object miRelatorio: TMenuItem
+          Caption = 'Relatório'
+        end
+      end
+    end
+    object mntools: TMenuItem
+      Caption = 'Tools'
+      object miconfig: TMenuItem
+        Caption = 'Config'
+        OnClick = miconfigClick
+      end
+    end
+    object MICLOSE: TMenuItem
+      Caption = 'Close'
+      OnClick = MICLOSEClick
+    end
   end
 end

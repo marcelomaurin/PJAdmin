@@ -5,13 +5,66 @@ unit funcoes;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, ExtCtrls, UTF8Process, Process
+  {$IFDEF MSWINDOWS}
+  ,windows, jwaWinBase, shellAPI
+  {$ENDIF}
+  ;
 
 Function RetiraInfo(Value : string): string;
 function BuscaChave( lista : TStringList; Ref: String; var posicao:integer): boolean;
 function iif(condicao : boolean; verdade : variant; falso: variant):variant;
+function ShowConfirm(Mensagem : string) : boolean;
+function GetGPUName(device : integer): string;
 
 implementation
+
+function GetGPUName(device : integer): string;
+var
+   cmd : TProcess;
+   AStringList: TStringList;
+begin
+   cmd := TProcess.Create(nil);
+   // Cria o objeto TStringList.
+   AStringList := TStringList.Create;
+   cmd.CommandLine := 'nvidia-smi -i '+inttostr(device)+' --format=csv,noheader --query-gpu=gpu_name';
+
+   cmd.Options := cmd.Options + [poWaitOnExit,poUsePipes,poNoConsole];
+
+   cmd.Execute;
+   AStringList.LoadFromStream(cmd.Output);
+
+   //AStringList.SaveToFile('output.txt');
+   result := trim(AStringList.Text);
+
+   // Agora que o arquivo foi salvo nós podemos liberar a
+   // TStringList e o TProcess.
+   AStringList.Free;
+   cmd.Free;
+end;
+
+
+function ShowConfirm(Mensagem : string) : boolean;
+var
+      Reply, BoxStyle: Integer;
+begin
+ {$IFDEF MSWINDOWS}
+      BoxStyle := MB_ICONQUESTION + MB_YESNO;
+      Reply := Application.MessageBox(pchar(Mensagem),'Confirmation', BoxStyle);
+      if Reply = IDYES then
+         result := true
+        else
+          result := false;
+ {$ENDIF}
+ {$IFDEF LINUX}
+   result := true;
+ {$ENDIF}
+ {$IFDEF DARWIN}
+   result := true;
+ {$ENDIF}
+
+end;
 
 function iif(condicao : boolean; verdade : variant; falso: variant):variant;
 begin

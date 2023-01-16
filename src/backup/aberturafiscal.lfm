@@ -1,0 +1,80 @@
+object frmAberturaFiscal: TfrmAberturaFiscal
+  Left = 695
+  Height = 240
+  Top = 436
+  Width = 320
+  Caption = 'Abertura Fiscal'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
+  object lbMesFiscal: TLabel
+    Left = 13
+    Height = 15
+    Top = 9
+    Width = 25
+    Caption = 'Mês:'
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 13
+    Height = 15
+    Top = 56
+    Width = 25
+    Caption = 'Ano:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 13
+    Height = 15
+    Top = 101
+    Width = 54
+    Caption = 'Descrição:'
+    ParentColor = False
+  end
+  object edMes: TEdit
+    Left = 13
+    Height = 23
+    Top = 24
+    Width = 80
+    TabOrder = 0
+    Text = 'edMes'
+  end
+  object edAno: TEdit
+    Left = 13
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 1
+    Text = 'edAno'
+  end
+  object meDesc: TMemo
+    Left = 13
+    Height = 68
+    Top = 116
+    Width = 299
+    Lines.Strings = (
+      'meDesc'
+    )
+    TabOrder = 2
+  end
+  object btSalve: TButton
+    Left = 237
+    Height = 33
+    Top = 192
+    Width = 75
+    Caption = 'Abrir'
+    OnClick = btSalveClick
+    TabOrder = 3
+  end
+  object btCancelar: TButton
+    Left = 152
+    Height = 33
+    Top = 192
+    Width = 75
+    Caption = 'Cancelar'
+    OnClick = btCancelarClick
+    TabOrder = 4
+  end
+end

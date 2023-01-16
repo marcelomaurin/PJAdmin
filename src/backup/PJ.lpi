@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
         <PackageName Value="Printer4Lazarus"/>
       </Item>
       <Item>
@@ -49,7 +52,7 @@
       <Unit>
         <Filename Value="main.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
@@ -74,6 +77,13 @@
         <ComponentName Value="frmconfig"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="aberturafiscal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAberturaFiscal"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AberturaFiscal"/>
       </Unit>
     </Units>
   </ProjectOptions>

@@ -12,80 +12,12 @@ object dmBase: TdmBase
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
-    Connected = True
     Port = 0
-    Database = 'D:\projetos\maurinsoft\Etiquetas\db\etiqueta.db'
+    Database = 'D:\projetos\maurinsoft\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
     LibraryLocation = 'D:\projetos\maurinsoft\Etiquetas\sqlite\win64\sqlite3.dll'
     Left = 48
     Top = 16
-  end
-  object zproduct: TZTable
-    Connection = zcon
-    TableName = 'product'
-    Left = 107
-    Top = 17
-    object zproductidproduto: TLongintField
-      FieldKind = fkData
-      FieldName = 'idproduto'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object zproductproductDesc: TStringField
-      FieldKind = fkData
-      FieldName = 'productDesc'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
-    object zproductproductDetail: TStringField
-      FieldKind = fkData
-      FieldName = 'productDetail'
-      Index = 2
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 40
-    end
-    object zproductDetail01: TStringField
-      FieldKind = fkData
-      FieldName = 'Detail01'
-      Index = 3
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object zproductDetail02: TStringField
-      FieldKind = fkData
-      FieldName = 'Detail02'
-      Index = 4
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-    object zproductprice: TStringField
-      FieldKind = fkData
-      FieldName = 'price'
-      Index = 5
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-    end
-  end
-  object zselproduct: TZTable
-    Connection = zcon
-    TableName = 'selproduct'
-    Left = 107
-    Top = 88
   end
   object tbcsv: TCSVDataset
     FieldDefs = <>
@@ -103,5 +35,83 @@ object dmBase: TdmBase
     DataSet = tbcsv
     Left = 201
     Top = 152
+  end
+  object zversao: TZTable
+    Connection = zcon
+    TableName = 'versao'
+    Left = 40
+    Top = 280
+    object zversaodtinstall: TMemoField
+      FieldKind = fkData
+      FieldName = 'dtinstall'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object zversaostrversao: TMemoField
+      FieldKind = fkData
+      FieldName = 'strversao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+  end
+  object zqry: TZQuery
+    Connection = zcon
+    Params = <>
+    Left = 257
+    Top = 291
+  end
+  object zreffiscal: TZTable
+    Connection = zcon
+    TableName = 'reffiscal'
+    Left = 104
+    Top = 280
+    object zreffiscalmesfiscal: TLargeintField
+      FieldKind = fkData
+      FieldName = 'mesfiscal'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zreffiscalanofiscal: TLargeintField
+      FieldKind = fkData
+      FieldName = 'anofiscal'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zreffiscaldescricao: TMemoField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object zreffiscalstatus: TLargeintField
+      FieldKind = fkData
+      FieldName = 'status'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
   end
 end
