@@ -103,6 +103,7 @@
         <Filename Value="cadpes.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmCadPes"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>

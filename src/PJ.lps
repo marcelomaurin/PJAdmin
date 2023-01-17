@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="2"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="44"/>
       </Unit>
       <Unit>
         <Filename Value="main.pas"/>
@@ -18,9 +18,10 @@
         <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="138"/>
-        <CursorPos Y="147"/>
-        <UsageCount Value="41"/>
+        <CursorPos Y="146"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,7 +34,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="310"/>
         <CursorPos X="48" Y="337"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -42,7 +43,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="21" Y="18"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -51,7 +52,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="84"/>
         <CursorPos X="75" Y="103"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -63,7 +64,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="43"/>
         <CursorPos X="57" Y="67"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -77,7 +78,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="42" Y="24"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="relfiscal.pas"/>
@@ -88,14 +89,27 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos Y="48"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="34"/>
+      </Unit>
+      <Unit>
+        <Filename Value="cadpes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadPes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="52"/>
+        <CursorPos X="22" Y="80"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="470"/>
         <CursorPos Y="496"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="18"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -103,7 +117,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="217"/>
         <CursorPos Y="241"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="14"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
@@ -111,14 +125,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2718"/>
         <CursorPos Y="2741"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2030"/>
         <CursorPos Y="2054"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
@@ -126,27 +140,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="132"/>
         <CursorPos Y="169"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="relfiscal.lfm"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="11"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit>
-      <Unit>
-        <Filename Value="cadpes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmCadPes"/>
-        <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="52"/>
-        <CursorPos X="24" Y="83"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\fcl-db\src\base\db.pas"/>
@@ -154,15 +155,11 @@
         <EditorIndex Value="2"/>
         <TopLine Value="24"/>
         <CursorPos X="58" Y="49"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="56" Column="63" TopLine="27"/>
-      </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
         <Caret Line="65" TopLine="27"/>
@@ -279,6 +276,10 @@
         <Filename Value="cadpes.pas"/>
         <Caret Line="89" Column="148" TopLine="52"/>
       </Position>
+      <Position>
+        <Filename Value="cadpes.pas"/>
+        <Caret Line="80" Column="22" TopLine="52"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -307,13 +308,6 @@
         <WatchKind Value="wpkWrite"/>
         <Source Value="dmbase.pas"/>
         <Line Value="456"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="main.pas"/>
-        <Line Value="146"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
