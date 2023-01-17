@@ -17,6 +17,10 @@ type
   TdmBase = class(TDataModule)
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
+    zcadpesDocumento: TMemoField;
+    zcadpesind: TLargeintField;
+    zcadpesNome: TMemoField;
+    zcadpesTipoPessoa: TLargeintField;
     zcon: TZConnection;
     zqry: TZQuery;
     zreffiscalanofiscal: TLargeintField;
@@ -31,6 +35,7 @@ type
     zproductproductDesc: TStringField;
     zproductproductDetail: TStringField;
     zreffiscal: TZTable;
+    zcadpes: TZTable;
     zversaodtinstall: TMemoField;
     zversaostrversao: TMemoField;
     procedure DataModuleCreate(Sender: TObject);
@@ -48,6 +53,8 @@ type
     function csvValidaLayout( tipo : TCSVLayout) : boolean;
     function dropproducts(): boolean;
     function TestaVersao( versao : string) : boolean;
+    function TestaVersaoMenor( versao : string) : boolean;
+    function VersaoBanco( ) : real;
     procedure registraversao(versao : string);
     procedure atualizaversao( versao: string);
     function MesFiscalAberto(): boolean;
@@ -267,6 +274,7 @@ begin
   *)
 end;
 
+//Verifica se a versão é igual
 function TdmBase.TestaVersao(versao: string): boolean;
 var
    resultado : boolean;
@@ -289,6 +297,52 @@ begin
    zversao.close;
    result := resultado;
 end;
+
+//Testa se versao é menor que atual
+function TdmBase.TestaVersaoMenor(versao: string): boolean;
+var
+   resultado : boolean;
+begin
+   resultado := false;
+   zversao.open;
+   if zversao.IsEmpty then
+   begin
+      registraversao(versao);
+      resultado := true;
+   end
+   else
+   begin
+      if(strtofloat(zversao.FieldByName('strversao').asstring) < strtofloat(versao)) then
+      begin
+        resultado := true;
+      end;
+   end;
+
+   zversao.close;
+   result := resultado;
+end;
+
+//Captura a versao do banco de dados
+function TdmBase.VersaoBanco: real;
+var
+   resultado : real;
+begin
+   resultado := 0;
+   zversao.open;
+   if zversao.IsEmpty then
+   begin
+
+      resultado := 0;
+   end
+   else
+   begin
+        resultado := strtofloat(zversao.FieldByName('strversao').asstring );
+   end;
+
+   zversao.close;
+   result := resultado;
+end;
+
 
 procedure TdmBase.registraversao(versao: string);
 begin

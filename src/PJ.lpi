@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="AnchorDocking"/>
+      </Item>
+      <Item>
         <PackageName Value="frce"/>
       </Item>
       <Item>
@@ -94,6 +97,12 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmRelfiscal"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="cadpes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadPes"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>

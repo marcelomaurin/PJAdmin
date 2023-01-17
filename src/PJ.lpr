@@ -10,8 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, printer4lazarus, rxnew, zcomponent, main, dmbase, funcoes, setmain,
-  config, AberturaFiscal, relfiscal
+  Forms, printer4lazarus, anchordockpkg, rxnew, zcomponent, main, dmbase,
+  funcoes, setmain, config, AberturaFiscal, relfiscal, cadpes
   { you can add units after this };
 
 {$R *.res}

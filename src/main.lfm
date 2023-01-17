@@ -154,6 +154,49 @@ object frmmain: Tfrmmain
           OnClick = miRelatorioClick
         end
       end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem1: TMenuItem
+        Caption = 'Despesas'
+        object MenuItem3: TMenuItem
+          Caption = 'Tipo de Despesas'
+        end
+        object MenuItem5: TMenuItem
+          Caption = 'Despesas'
+        end
+      end
+      object MenuItem2: TMenuItem
+        Caption = 'Receitas'
+        object MenuItem4: TMenuItem
+          Caption = 'Tipos de Receitas'
+        end
+        object MenuItem6: TMenuItem
+          Caption = 'Receitas'
+        end
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object miPessoas: TMenuItem
+        Caption = 'Pessoas'
+        object miconspes: TMenuItem
+          Caption = 'Consulta'
+          OnClick = miconspesClick
+        end
+        object mirelpes: TMenuItem
+          Caption = 'Relatorio'
+        end
+      end
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Analises'
+      object MenuItem8: TMenuItem
+        Caption = 'Faturamento'
+      end
+      object MenuItem9: TMenuItem
+        Caption = 'Lucro líquedo'
+      end
     end
     object mntools: TMenuItem
       Caption = 'Tools'

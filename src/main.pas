@@ -6,9 +6,10 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
-  dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal;
+  dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal,
+  cadpes;
 
-const versao = '0.01';
+const versao = '0.02';
 
 type
 
@@ -17,6 +18,19 @@ type
   Tfrmmain = class(TForm)
     imgconfig: TImage;
     MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    mirelpes: TMenuItem;
+    miconspes: TMenuItem;
+    miPessoas: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
+    Separator3: TMenuItem;
     miabertura: TMenuItem;
     mifechamento: TMenuItem;
     miRelatorio: TMenuItem;
@@ -26,12 +40,14 @@ type
     miconfig: TMenuItem;
     mntools: TMenuItem;
     MICLOSE: TMenuItem;
+    Separator2: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure imgconfigClick(Sender: TObject);
     procedure miaberturaClick(Sender: TObject);
     procedure MICLOSEClick(Sender: TObject);
     procedure miconfigClick(Sender: TObject);
+    procedure miconspesClick(Sender: TObject);
     procedure mifechamentoClick(Sender: TObject);
     procedure miRelatorioClick(Sender: TObject);
   private
@@ -123,6 +139,14 @@ end;
 procedure Tfrmmain.miconfigClick(Sender: TObject);
 begin
     imgconfigClick(self);
+end;
+
+procedure Tfrmmain.miconspesClick(Sender: TObject);
+begin
+  frmCadPes := Tfrmcadpes.Create(self);
+  frmCadPes.showmodal();
+  frmCadPes.free;
+  frmCadPes := nil;
 end;
 
 procedure Tfrmmain.mifechamentoClick(Sender: TObject);
