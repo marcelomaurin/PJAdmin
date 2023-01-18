@@ -106,6 +106,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
+      <Unit>
+        <Filename Value="relcadpes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmrelcadpes"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

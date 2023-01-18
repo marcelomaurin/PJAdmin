@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
   ComCtrls, ExtCtrls, DBCtrls, DBGrids, rxlookup, rxdbcomb, AnchorDockPanel,
-  dmbase, setmain, funcoes;
+  dmbase, setmain, funcoes, relcadpes;
 
 type
 
@@ -42,11 +42,14 @@ type
     btEditar: TSpeedButton;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    btImpRel: TToggleBox;
+    btExpCSV: TToggleBox;
     tsRegistro: TTabSheet;
     tsGrid: TTabSheet;
     procedure btAdicionarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
     procedure btEditarClick(Sender: TObject);
+    procedure btImpRelChange(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure cbTipoPessoaChange(Sender: TObject);
     procedure dscadpesDataChange(Sender: TObject; Field: TField);
@@ -96,6 +99,15 @@ begin
 
     fdmbase.zcadpes.Edit;
   end;
+end;
+
+procedure TfrmCadPes.btImpRelChange(Sender: TObject);
+begin
+  frmrelcadpes := Tfrmrelcadpes.create(self);
+  frmrelcadpes.RLReport1.Prepare;
+  frmrelcadpes.RLReport1.Preview(nil);
+  frmrelcadpes.Free;
+  frmrelcadpes := nil;
 end;
 
 procedure TfrmCadPes.btAdicionarClick(Sender: TObject);

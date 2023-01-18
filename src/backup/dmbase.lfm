@@ -116,8 +116,8 @@ object dmBase: TdmBase
       'select * from cadpes order by nome'
     )
     Params = <>
-    Left = 200
-    Top = 232
+    Left = 136
+    Top = 203
     object zqrycadpesind: TLargeintField
       FieldKind = fkData
       FieldName = 'ind'

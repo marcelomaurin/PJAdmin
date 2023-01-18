@@ -6,10 +6,10 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
-  dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal,
-  cadpes;
+  StdCtrls, dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal, cadpes,
+  relcadpes;
 
-const versao = '0.01';
+const versao = '0.02';
 
 type
 
@@ -17,6 +17,10 @@ type
 
   Tfrmmain = class(TForm)
     imgconfig: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    lbversao: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     mirelpes: TMenuItem;
@@ -50,6 +54,7 @@ type
     procedure miconspesClick(Sender: TObject);
     procedure mifechamentoClick(Sender: TObject);
     procedure miRelatorioClick(Sender: TObject);
+    procedure mirelpesClick(Sender: TObject);
   private
     procedure AbreMesFiscal();
     procedure FechaMesFiscal();
@@ -71,9 +76,12 @@ procedure Tfrmmain.FormCreate(Sender: TObject);
 begin
   FSetMain := TSetMain.create();
   FSetMain.CarregaContexto();
+  self.top := FSetMain.posy;
+  self.left := FSetMain.posx;
   self.Height := FSetMain.Height;
   self.Width := FSetMain.Width;
   fdmBase := TdmBase.create(self);
+  lbversao.Caption:= versao;
   try
     fdmBase.opendb();
     if not fdmBase.TestaVersao(versao) then
@@ -94,6 +102,8 @@ begin
   fdmBase.closedb();
   fdmBase.free;
   fdmBase := nil;
+  FSetMain.posy:= self.top;
+  FSetMain.posx:= self.left;
   FSetMain.Height:= self.Height;
   FSetMain.Width:= self.Width;
   FSetMain.SalvaContexto(false);
@@ -174,6 +184,19 @@ begin
   frmRelFiscal.preparaDados();
   frmRelFiscal.Visualiza();
 
+end;
+
+procedure Tfrmmain.mirelpesClick(Sender: TObject);
+begin
+  fdmBase.zqrycadpes.sql.text := 'select * from cadpes order by nome';
+  fdmBase.zqrycadpes.prepare;
+  fdmBase.zqrycadpes.open;
+  frmrelcadpes := Tfrmrelcadpes.create(self);
+  frmrelcadpes.RLReport1.Prepare;
+  frmrelcadpes.RLReport1.Preview(nil);
+  frmrelcadpes.Free;
+  frmrelcadpes := nil;
+  fdmBase.zqrycadpes.close;
 end;
 
 procedure Tfrmmain.AbreMesFiscal();

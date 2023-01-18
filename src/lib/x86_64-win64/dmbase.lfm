@@ -12,7 +12,6 @@ object dmBase: TdmBase
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
-    Connected = True
     Port = 0
     Database = 'D:\projetos\maurinsoft\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
