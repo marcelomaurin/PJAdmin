@@ -110,11 +110,63 @@ object dmBase: TdmBase
       Required = False
     end
   end
+  object zqrycadpes: TZQuery
+    Connection = zcon
+    SQL.Strings = (
+      'select * from cadpes order by nome'
+    )
+    Params = <>
+    Left = 200
+    Top = 232
+    object zqrycadpesind: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ind'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadpesNome: TStringField
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqrycadpesTipoPessoa: TLargeintField
+      FieldKind = fkData
+      FieldName = 'TipoPessoa'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadpesDocumento: TStringField
+      FieldKind = fkData
+      FieldName = 'Documento'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+  end
+  object dscadpes: TDataSource
+    DataSet = zcadpes
+    Left = 40
+    Top = 203
+  end
   object zcadpes: TZTable
     Connection = zcon
     TableName = 'cadpes'
-    Left = 168
-    Top = 280
+    Left = 81
+    Top = 203
     object zcadpesind: TLargeintField
       FieldKind = fkData
       FieldName = 'ind'

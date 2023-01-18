@@ -15,14 +15,25 @@ type
   { TdmBase }
 
   TdmBase = class(TDataModule)
+    dscadpes: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
     zcadpesDocumento: TStringField;
+    zcadpesDocumento1: TStringField;
     zcadpesind: TLargeintField;
+    zcadpesind1: TLargeintField;
     zcadpesNome: TStringField;
+    zcadpesNome1: TStringField;
     zcadpesTipoPessoa: TLargeintField;
+    zcadpesTipoPessoa1: TLargeintField;
     zcon: TZConnection;
     zqry: TZQuery;
+    zqrycadpes: TZQuery;
+    zqrycadpesDocumento: TStringField;
+    zqrycadpesind: TLargeintField;
+    zqrycadpesNome: TStringField;
+    zqrycadpesTipoPessoa: TLargeintField;
+    zcadpes: TZTable;
     zreffiscalanofiscal: TLargeintField;
     zreffiscaldescricao: TStringField;
     zreffiscalmesfiscal: TLargeintField;
@@ -35,7 +46,6 @@ type
     zproductproductDesc: TStringField;
     zproductproductDetail: TStringField;
     zreffiscal: TZTable;
-    zcadpes: TZTable;
     zversaodtinstall: TStringField;
     zversaostrversao: TStringField;
     procedure DataModuleCreate(Sender: TObject);
@@ -63,6 +73,7 @@ type
     function CloseMesFiscal( ): boolean;
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
+    function PesquisaCadPes( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
   end;
 
 var
@@ -464,6 +475,59 @@ begin
        resultado := false;
      end;
      result := resultado;
+end;
+
+function TdmBase.PesquisaCadPes(Nome: String; TipoPessoa: integer;
+  Documento: string): boolean;
+var
+   resultado : boolean;
+begin
+   resultado := true;
+   try
+    zcadpes.close;
+    zqrycadpes.close;
+    //zcadpes.Filter:= '';
+    //zcadpes.Filtered:=true;
+    zqrycadpes.sql.text := 'select * from cadpes ';
+    if (Nome <> '') then
+    begin
+      zqrycadpes.sql.text := zqrycadpes.sql.text + ' where nome like "%'+ Nome+'%" ';
+    end;
+    if (TipoPessoa <> 0) then
+    begin
+      if (pos(zqrycadpes.sql.text,'where')<> 0) then
+      begin
+         zqrycadpes.sql.text := zqrycadpes.sql.text +' where TipoPessoa = '+ inttostr(TipoPessoa);
+      end
+      else
+      begin
+         zqrycadpes.sql.text := zqrycadpes.sql.text + ' and TipoPessoa = '+ inttostr(TipoPessoa);
+      end;
+    end;
+
+    if (Documento <> '') then
+    begin
+      if (pos(zqrycadpes.sql.text,'where')<> 0) then
+      begin
+         zqrycadpes.sql.text := zqrycadpes.sql.text + ' where documento like "%'+ Documento+'%" ';
+      end
+      else
+      begin
+         zqrycadpes.sql.text := zqrycadpes.sql.text + ' and documento like "'+ Documento+'%" ';
+      end
+    end;
+    //fdmbase.zcadpes.;
+
+    //zcadpes.open;
+    //showmessage(zqrycadpes.sql.text);
+    zqrycadpes.open;
+   except
+     resultado := false;
+   end;
+
+
+   result := resultado;
+
 end;
 
 
