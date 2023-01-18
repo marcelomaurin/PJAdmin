@@ -25,3 +25,6 @@ marcelomaurinmartins@gmail.com
 ## Plataforma
 Funciona em Windows apenas.
 
+## Screen
+
+![image](https://user-images.githubusercontent.com/26309210/212939723-c7b6d294-138b-4445-b8d3-4e37d7fa30f5.png)
