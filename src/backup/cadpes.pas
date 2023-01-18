@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, ExtCtrls, DBCtrls, DBGrids, AnchorDockPanel, dmbase, setmain,
-  funcoes;
+  ComCtrls, ExtCtrls, DBCtrls, DBGrids, rxlookup, rxdbcomb, AnchorDockPanel,
+  dmbase, setmain, funcoes;
 
 type
 
@@ -18,7 +18,6 @@ type
     btSalvar: TSpeedButton;
     btCancelar: TSpeedButton;
     cbTipoPessoa: TComboBox;
-    DBComboBox1: TDBComboBox;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBText1: TDBText;
@@ -38,16 +37,21 @@ type
     pncontrole: TPanel;
     pnTop: TAnchorDockPanel;
     pnclient: TAnchorDockPanel;
+    RxDBComboBox1: TRxDBComboBox;
     SpeedButton1: TSpeedButton;
     btEditar: TSpeedButton;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     tsRegistro: TTabSheet;
     tsGrid: TTabSheet;
+    procedure btAdicionarClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
+    procedure btEditarClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
+    procedure cbTipoPessoaChange(Sender: TObject);
     procedure dscadpesDataChange(Sender: TObject; Field: TField);
     procedure dscadpesStateChange(Sender: TObject);
+    procedure edpesnomeKeyPress(Sender: TObject; var Key: char);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -78,13 +82,34 @@ begin
 
 end;
 
+procedure TfrmCadPes.btEditarClick(Sender: TObject);
+begin
+  if not fdmbase.zcadpes.IsEmpty then
+  begin
+    fdmbase.zcadpes.Edit;
+  end;
+end;
+
+procedure TfrmCadPes.btAdicionarClick(Sender: TObject);
+begin
+  fdmbase.zcadpes.Append;
+end;
+
 procedure TfrmCadPes.btSalvarClick(Sender: TObject);
 begin
-  fdmbase.zcad
+  fdmbase.zcadpes.post;
+end;
+
+procedure TfrmCadPes.cbTipoPessoaChange(Sender: TObject);
+begin
+
 end;
 
 procedure TfrmCadPes.dscadpesDataChange(Sender: TObject; Field: TField);
 begin
+
+     // SpeedButton1Click(self);
+
 
 end;
 
@@ -105,6 +130,14 @@ begin
   end;
 end;
 
+procedure TfrmCadPes.edpesnomeKeyPress(Sender: TObject; var Key: char);
+begin
+  if key = #13 then
+  begin
+      SpeedButton1Click(self);
+  end;
+end;
+
 procedure TfrmCadPes.FormDestroy(Sender: TObject);
 begin
   fdmbase.zcadpes.close;
@@ -114,9 +147,19 @@ procedure TfrmCadPes.SpeedButton1Click(Sender: TObject);
 begin
   fdmbase.zcadpes.close;
   fdmbase.zcadpes.Filter:= '';
+  fdmbase.zcadpes.Filtered:=true;
   if edpesnome.Text <> '' then
   begin
-    fdmbase.zcadpes.Filter:= '  nome like "%'+ edpesnome.text+'%" ';
+    fdmbase.zcadpes.Filter:= '  nome like "'+ edpesnome.text+'" ';
+  end;
+  if (cbTipoPessoa.ItemIndex <> 0) then
+  begin
+    fdmbase.zcadpes.Filter:= '  TipoPessoa = '+ inttostr(cbTipoPessoa.itemindex);
+  end;
+
+  if (edDocumento.text <> '') then
+  begin
+    fdmbase.zcadpes.Filter:= '  documento like "'+ edDocumento.text+'%" ';
   end;
   //fdmbase.zcadpes.;
   fdmbase.zcadpes.open;

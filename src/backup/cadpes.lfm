@@ -31,6 +31,7 @@ object frmCadPes: TfrmCadPes
       Height = 23
       Top = 26
       Width = 320
+      OnKeyPress = edpesnomeKeyPress
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
@@ -45,10 +46,10 @@ object frmCadPes: TfrmCadPes
       ParentColor = False
     end
     object cbTipoPessoa: TComboBox
-      Left = 349
+      Left = 344
       Height = 23
       Hint = 'Tipo de Pessoa'
-      Top = 26
+      Top = 27
       Width = 139
       ItemHeight = 15
       ItemIndex = 0
@@ -57,6 +58,7 @@ object frmCadPes: TfrmCadPes
         'Pessoa Fisica'
         'Pessoa Juridica'
       )
+      OnChange = cbTipoPessoaChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -76,6 +78,7 @@ object frmCadPes: TfrmCadPes
       Hint = 'Documento de Identificação'
       Top = 27
       Width = 200
+      OnKeyPress = edpesnomeKeyPress
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -107,9 +110,9 @@ object frmCadPes: TfrmCadPes
       Height = 331
       Top = 1
       Width = 707
-      ActivePage = tsRegistro
+      ActivePage = tsGrid
       Align = alClient
-      TabIndex = 3
+      TabIndex = 0
       TabOrder = 0
       object tsGrid: TTabSheet
         Caption = 'Dados'
@@ -149,6 +152,7 @@ object frmCadPes: TfrmCadPes
             Top = 8
             Width = 91
             Caption = 'Editar'
+            OnClick = btEditarClick
           end
           object btAdicionar: TSpeedButton
             Left = 400
@@ -156,6 +160,7 @@ object frmCadPes: TfrmCadPes
             Top = 8
             Width = 91
             Caption = 'Adicionar'
+            OnClick = btAdicionarClick
           end
         end
         object DBGrid1: TDBGrid
@@ -177,7 +182,7 @@ object frmCadPes: TfrmCadPes
         Caption = 'Relatórios'
       end
       object tsRegistro: TTabSheet
-        Caption = 'tsRegistro'
+        Caption = 'Registro'
         ClientHeight = 303
         ClientWidth = 699
         Enabled = False
@@ -224,21 +229,6 @@ object frmCadPes: TfrmCadPes
           Caption = 'Tipo:'
           ParentColor = False
         end
-        object DBComboBox1: TDBComboBox
-          Left = 8
-          Height = 23
-          Top = 112
-          Width = 196
-          DataField = 'TipoPessoa'
-          DataSource = dscadpes
-          ItemHeight = 15
-          Items.Strings = (
-            'Pessoa Fisica'
-            'Pessoa Juridica'
-          )
-          MaxLength = 0
-          TabOrder = 1
-        end
         object Label7: TLabel
           Left = 8
           Height = 15
@@ -272,6 +262,27 @@ object frmCadPes: TfrmCadPes
           Width = 91
           Caption = 'Cancelar'
           OnClick = btCancelarClick
+        end
+        object RxDBComboBox1: TRxDBComboBox
+          Left = 7
+          Height = 23
+          Top = 114
+          Width = 169
+          Style = csDropDownList
+          DataField = 'TipoPessoa'
+          DataSource = dscadpes
+          EnableValues = True
+          ItemHeight = 15
+          Items.Strings = (
+            'Pessoa Física'
+            'Pessoa Juridica'
+          )
+          MaxLength = 0
+          TabOrder = 1
+          Values.Strings = (
+            '1'
+            '2'
+          )
         end
       end
     end

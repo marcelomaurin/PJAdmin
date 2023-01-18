@@ -17,14 +17,14 @@ type
   TdmBase = class(TDataModule)
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
-    zcadpesDocumento: TMemoField;
+    zcadpesDocumento: TStringField;
     zcadpesind: TLargeintField;
-    zcadpesNome: TMemoField;
+    zcadpesNome: TStringField;
     zcadpesTipoPessoa: TLargeintField;
     zcon: TZConnection;
     zqry: TZQuery;
     zreffiscalanofiscal: TLargeintField;
-    zreffiscaldescricao: TMemoField;
+    zreffiscaldescricao: TStringField;
     zreffiscalmesfiscal: TLargeintField;
     zreffiscalstatus: TLargeintField;
     zversao: TZTable;
@@ -36,8 +36,8 @@ type
     zproductproductDetail: TStringField;
     zreffiscal: TZTable;
     zcadpes: TZTable;
-    zversaodtinstall: TMemoField;
-    zversaostrversao: TMemoField;
+    zversaodtinstall: TStringField;
+    zversaostrversao: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     function ImportReportDS(): boolean;

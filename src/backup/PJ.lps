@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="2"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="46"/>
       </Unit>
       <Unit>
         <Filename Value="main.pas"/>
@@ -19,8 +19,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="138"/>
-        <CursorPos Y="147"/>
-        <UsageCount Value="44"/>
+        <CursorPos X="10" Y="141"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -32,26 +32,26 @@
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="4"/>
         <TopLine Value="310"/>
-        <CursorPos X="48" Y="337"/>
-        <UsageCount Value="44"/>
+        <CursorPos X="86" Y="325"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="funcoes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <CursorPos X="21" Y="18"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="setmain.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="84"/>
         <CursorPos X="75" Y="103"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -63,7 +63,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="43"/>
         <CursorPos X="57" Y="67"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -77,7 +77,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="42" Y="24"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="41"/>
       </Unit>
       <Unit>
         <Filename Value="relfiscal.pas"/>
@@ -85,10 +85,26 @@
         <ComponentName Value="frmRelfiscal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="7"/>
-        <CursorPos Y="48"/>
-        <UsageCount Value="34"/>
+        <CursorPos X="20" Y="14"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="cadpes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCadPes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="63" Y="153"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\component\ZAbstractConnection.pas"/>
@@ -136,148 +152,144 @@
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
-        <Filename Value="cadpes.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmCadPes"/>
-        <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="52"/>
-        <CursorPos X="22" Y="80"/>
-        <UsageCount Value="25"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\fcl-db\src\base\db.pas"/>
         <UnitName Value="DB"/>
         <EditorIndex Value="2"/>
         <TopLine Value="24"/>
         <CursorPos X="58" Y="49"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\marce\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcCache.pas"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="3112"/>
+        <CursorPos Y="3136"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="56" Column="63" TopLine="27"/>
+        <Caret Line="80" Column="22" TopLine="52"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="65" TopLine="27"/>
+        <Caret Line="76" Column="114" TopLine="53"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="66" TopLine="27"/>
+        <Caret Line="90" Column="26" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="322" Column="78" TopLine="311"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="321" Column="78" TopLine="310"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="320" Column="78" TopLine="309"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="319" Column="78" TopLine="308"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="316" Column="72" TopLine="307"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="315" Column="72" TopLine="306"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="314" Column="72" TopLine="305"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="316" Column="72" TopLine="307"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="315" Column="72" TopLine="306"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="314" Column="72" TopLine="305"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="313" Column="72" TopLine="304"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="312" Column="72" TopLine="303"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="316" Column="72" TopLine="307"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="71" TopLine="27"/>
+        <Caret Line="64" Column="44" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="36" Column="92" TopLine="28"/>
+        <Caret Line="63" Column="44" TopLine="53"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="37" Column="92" TopLine="28"/>
+        <Caret Line="64" Column="44" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="38" Column="92" TopLine="29"/>
+        <Caret Line="65" Column="44" TopLine="55"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="37" Column="92" TopLine="28"/>
+        <Caret Line="64" Column="44" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="44" Column="115" TopLine="28"/>
+        <Caret Line="78" Column="67" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="45" Column="115" TopLine="28"/>
+        <Caret Line="130" TopLine="93"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="46" Column="115" TopLine="29"/>
+        <Caret Line="131" TopLine="93"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="47" Column="115" TopLine="30"/>
+        <Caret Line="132" TopLine="93"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="48" Column="115" TopLine="31"/>
+        <Caret Line="133" Column="34" TopLine="93"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="49" Column="115" TopLine="32"/>
+        <Caret Line="132" Column="123" TopLine="99"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="48" Column="115" TopLine="31"/>
+        <Caret Line="128" Column="5" TopLine="99"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="49" Column="115" TopLine="32"/>
+        <Caret Line="124" Column="39" TopLine="112"/>
       </Position>
       <Position>
         <Filename Value="cadpes.pas"/>
-        <Caret Line="50" Column="115" TopLine="33"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="51" Column="115" TopLine="34"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="50" Column="115" TopLine="33"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="51" Column="54" TopLine="34"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="53" Column="54" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="54" Column="54" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="53" Column="54" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="54" Column="54" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="56" Column="54" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="76" Column="3" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="87" Column="19" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\fcl-db\src\base\db.pas"/>
-        <Caret Line="1930" Column="14" TopLine="1907"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="99" Column="18" TopLine="51"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="89" Column="148" TopLine="52"/>
+        <Caret Line="132" Column="3" TopLine="118"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -307,20 +319,6 @@
         <WatchKind Value="wpkWrite"/>
         <Source Value="dmbase.pas"/>
         <Line Value="456"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="main.pas"/>
-        <Line Value="146"/>
-      </Item>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="cadpes.pas"/>
-        <Line Value="115"/>
       </Item>
     </BreakPoints>
   </Debugging>

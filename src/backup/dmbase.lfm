@@ -42,7 +42,7 @@ object dmBase: TdmBase
     TableName = 'versao'
     Left = 40
     Top = 280
-    object zversaodtinstall: TMemoField
+    object zversaodtinstall: TStringField
       FieldKind = fkData
       FieldName = 'dtinstall'
       Index = 0
@@ -50,10 +50,8 @@ object dmBase: TdmBase
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftMemo
-      Transliterate = False
     end
-    object zversaostrversao: TMemoField
+    object zversaostrversao: TStringField
       FieldKind = fkData
       FieldName = 'strversao'
       Index = 1
@@ -61,8 +59,6 @@ object dmBase: TdmBase
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftMemo
-      Transliterate = False
     end
   end
   object zqry: TZQuery
@@ -94,7 +90,7 @@ object dmBase: TdmBase
       ReadOnly = False
       Required = False
     end
-    object zreffiscaldescricao: TMemoField
+    object zreffiscaldescricao: TStringField
       FieldKind = fkData
       FieldName = 'descricao'
       Index = 2
@@ -102,8 +98,7 @@ object dmBase: TdmBase
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftMemo
-      Transliterate = False
+      Size = 50
     end
     object zreffiscalstatus: TLargeintField
       FieldKind = fkData
@@ -117,7 +112,6 @@ object dmBase: TdmBase
   end
   object zcadpes: TZTable
     Connection = zcon
-    Active = True
     TableName = 'cadpes'
     Left = 168
     Top = 280
@@ -130,7 +124,7 @@ object dmBase: TdmBase
       ReadOnly = False
       Required = False
     end
-    object zcadpesNome: TMemoField
+    object zcadpesNome: TStringField
       FieldKind = fkData
       FieldName = 'Nome'
       Index = 1
@@ -138,8 +132,7 @@ object dmBase: TdmBase
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
-      BlobType = ftMemo
-      Transliterate = False
+      Size = 80
     end
     object zcadpesTipoPessoa: TLargeintField
       FieldKind = fkData
@@ -150,7 +143,7 @@ object dmBase: TdmBase
       ReadOnly = False
       Required = False
     end
-    object zcadpesDocumento: TMemoField
+    object zcadpesDocumento: TStringField
       FieldKind = fkData
       FieldName = 'Documento'
       Index = 3
@@ -158,8 +151,7 @@ object dmBase: TdmBase
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      BlobType = ftMemo
-      Transliterate = False
+      Size = 30
     end
   end
 end
