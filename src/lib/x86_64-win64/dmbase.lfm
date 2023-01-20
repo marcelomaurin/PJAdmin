@@ -13,7 +13,9 @@ object dmBase: TdmBase
       'controls_cp=CP_UTF8'
     )
     Port = 0
+    Database = 'D:\projetos\maurinsoft\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
+    LibraryLocation = 'D:\projetos\maurinsoft\PJAdmin\sqlite\win64\sqlite3.dll'
     Left = 48
     Top = 16
   end
@@ -203,6 +205,93 @@ object dmBase: TdmBase
       ReadOnly = False
       Required = True
       Size = 30
+    end
+  end
+  object zcadend: TZTable
+    Connection = zcon
+    TableName = 'CADEND'
+    MasterFields = 'ind'
+    MasterSource = dscadpes
+    LinkedFields = 'IDCADPES'
+    Left = 128
+    Top = 72
+    object zcadendIDCADPES: TLargeintField
+      FieldKind = fkData
+      FieldName = 'IDCADPES'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zcadendID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zcadendLogradouro: TStringField
+      FieldKind = fkData
+      FieldName = 'Logradouro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object zcadendBairro: TStringField
+      FieldKind = fkData
+      FieldName = 'Bairro'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zcadendCidade: TStringField
+      FieldKind = fkData
+      FieldName = 'Cidade'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zcadendCEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object zcadendOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zcadendReferencia: TStringField
+      FieldKind = fkData
+      FieldName = 'Referencia'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
     end
   end
 end

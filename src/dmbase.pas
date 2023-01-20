@@ -18,14 +18,19 @@ type
     dscadpes: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
+    zcadend: TZTable;
+    zcadendBairro: TStringField;
+    zcadendCEP: TStringField;
+    zcadendCidade: TStringField;
+    zcadendID: TLargeintField;
+    zcadendIDCADPES: TLargeintField;
+    zcadendLogradouro: TStringField;
+    zcadendOBS: TStringField;
+    zcadendReferencia: TStringField;
     zcadpesDocumento: TStringField;
-    zcadpesDocumento1: TStringField;
     zcadpesind: TLargeintField;
-    zcadpesind1: TLargeintField;
     zcadpesNome: TStringField;
-    zcadpesNome1: TStringField;
     zcadpesTipoPessoa: TLargeintField;
-    zcadpesTipoPessoa1: TLargeintField;
     zcon: TZConnection;
     zqry: TZQuery;
     zqrycadpes: TZQuery;
@@ -64,7 +69,7 @@ type
     function dropproducts(): boolean;
     function TestaVersao( versao : string) : boolean;
     function TestaVersaoMenor( versao : string) : boolean;
-    function VersaoBanco( ) : real;
+    function VersaoBanco( ) : double;
     procedure registraversao(versao : string);
     procedure atualizaversao( versao: string);
     function MesFiscalAberto(): boolean;
@@ -74,6 +79,7 @@ type
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
     function PesquisaCadPes( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
+    function AtualizarBanco(Versao: String): boolean;
   end;
 
 var
@@ -334,11 +340,12 @@ begin
 end;
 
 //Captura a versao do banco de dados
-function TdmBase.VersaoBanco: real;
+function TdmBase.VersaoBanco: double;
 var
    resultado : real;
 begin
    resultado := 0;
+   DecimalSeparator := '.';
    zversao.open;
    if zversao.IsEmpty then
    begin
@@ -487,6 +494,7 @@ begin
    try
     zcadpes.close;
     zqrycadpes.close;
+    zcadend.close;
     //zcadpes.Filter:= '';
     //zcadpes.Filtered:=true;
     zqrycadpes.sql.text := 'select * from cadpes ';
@@ -525,6 +533,7 @@ begin
     //showmessage(zqrycadpes.sql.text);
     zqrycadpes.Prepare;
     zqrycadpes.open;
+    zcadend.open;
     //dscadpes.DataSet := zcadpes;
    except
      resultado := false;
@@ -533,6 +542,30 @@ begin
 
    result := resultado;
 
+end;
+
+//Script para atualização de banco de dados
+function TdmBase.AtualizarBanco(Versao: String): boolean;
+var
+   resultado : boolean;
+   versaoant : double;
+   versaoatual : double;
+begin
+   resultado := false;
+   try
+      versaoant := VersaoBanco();
+      DecimalSeparator := '.';
+      versaoatual := StrToFloat(versao);
+      (*Implementar rotinas para atualizar os scripts*)
+      //Nao implementado
+
+      (*Corrige a versao do banco*)
+      atualizaversao(Versao);
+   finally
+     resultado := true;
+   end;
+
+   result := resultado;
 end;
 
 

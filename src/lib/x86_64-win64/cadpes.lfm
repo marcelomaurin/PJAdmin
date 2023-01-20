@@ -172,6 +172,7 @@ object frmCadPes: TfrmCadPes
           Color = clWindow
           Columns = <>
           DataSource = dscadpes
+          PopupMenu = popGrid
           TabOrder = 1
         end
       end
@@ -306,6 +307,110 @@ object frmCadPes: TfrmCadPes
           )
         end
       end
+      object tsEndereco: TTabSheet
+        Caption = 'Endereços'
+        ClientHeight = 303
+        ClientWidth = 699
+        object Panel1: TPanel
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 699
+          Align = alTop
+          ClientHeight = 50
+          ClientWidth = 699
+          TabOrder = 0
+          object DBNavigator2: TDBNavigator
+            Left = 24
+            Height = 25
+            Top = 8
+            Width = 241
+            BevelOuter = bvNone
+            ChildSizing.EnlargeHorizontal = crsScaleChilds
+            ChildSizing.EnlargeVertical = crsScaleChilds
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ChildSizing.ControlsPerLine = 100
+            ClientHeight = 25
+            ClientWidth = 241
+            DataSource = dscadend
+            Options = []
+            TabOrder = 0
+            VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbRefresh]
+          end
+          object btAdicionarEnd: TSpeedButton
+            Left = 328
+            Height = 29
+            Top = 8
+            Width = 91
+            Caption = 'Adicionar'
+            OnClick = btAdicionarEndClick
+          end
+        end
+        object DBGridCadEnd: TDBGrid
+          Left = 0
+          Height = 203
+          Top = 50
+          Width = 699
+          Align = alClient
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = 'Logradouro'
+              FieldName = 'Logradouro'
+            end          
+            item
+              Title.Caption = 'Bairro'
+              FieldName = 'Bairro'
+            end          
+            item
+              Title.Caption = 'Cidade'
+              FieldName = 'Cidade'
+            end          
+            item
+              Title.Caption = 'CEP'
+              FieldName = 'CEP'
+            end          
+            item
+              Title.Caption = 'OBS'
+              FieldName = 'OBS'
+            end          
+            item
+              Title.Caption = 'Referencia'
+              FieldName = 'Referencia'
+            end>
+          DataSource = dscadend
+          PopupMenu = popGrid
+          TabOrder = 1
+        end
+        object Panel2: TPanel
+          Left = 0
+          Height = 50
+          Top = 253
+          Width = 699
+          Align = alBottom
+          ClientHeight = 50
+          ClientWidth = 699
+          TabOrder = 2
+          object btSalvarEnd: TSpeedButton
+            Left = 600
+            Height = 29
+            Top = 8
+            Width = 91
+            Caption = 'Salvar'
+            OnClick = btSalvarEndClick
+          end
+          object btCancelarEnd: TSpeedButton
+            Left = 488
+            Height = 29
+            Top = 8
+            Width = 91
+            Caption = 'Cancelar'
+            OnClick = btCancelarEndClick
+          end
+        end
+      end
     end
   end
   object dscadpes: TDataSource
@@ -314,5 +419,19 @@ object frmCadPes: TfrmCadPes
     OnDataChange = dscadpesDataChange
     Left = 128
     Top = 226
+  end
+  object popGrid: TPopupMenu
+    Left = 245
+    Top = 231
+    object MenuItem1: TMenuItem
+      Caption = 'Vincular Endereço'
+      OnClick = MenuItem1Click
+    end
+  end
+  object dscadend: TDataSource
+    DataSet = dmBase.zcadend
+    OnStateChange = dscadendStateChange
+    Left = 128
+    Top = 304
   end
 end

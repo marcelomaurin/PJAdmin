@@ -155,6 +155,7 @@ object frmmain: Tfrmmain
     Height = 15
     Top = 80
     Width = 37
+    Anchors = [akTop, akLeft, akRight]
     Caption = 'Versão:'
     ParentColor = False
   end
@@ -163,6 +164,7 @@ object frmmain: Tfrmmain
     Height = 15
     Top = 96
     Width = 6
+    Anchors = [akTop, akLeft, akRight]
     Caption = '0'
     ParentColor = False
   end
@@ -222,6 +224,13 @@ object frmmain: Tfrmmain
         object mirelpes: TMenuItem
           Caption = 'Relatorio'
           OnClick = mirelpesClick
+          object mirelsimples: TMenuItem
+            Caption = 'Relatório Simples'
+            OnClick = mirelsimplesClick
+          end
+          object MenuItem11: TMenuItem
+            Caption = 'Relatório Endereço'
+          end
         end
       end
     end

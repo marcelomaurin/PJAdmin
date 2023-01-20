@@ -9,7 +9,7 @@ uses
   StdCtrls, dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal, cadpes,
   relcadpes;
 
-const versao = '0.02';
+const versao = '0.03';
 
 type
 
@@ -23,6 +23,8 @@ type
     lbversao: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
+    mirelsimples: TMenuItem;
+    MenuItem11: TMenuItem;
     mirelpes: TMenuItem;
     miconspes: TMenuItem;
     miPessoas: TMenuItem;
@@ -55,6 +57,7 @@ type
     procedure mifechamentoClick(Sender: TObject);
     procedure miRelatorioClick(Sender: TObject);
     procedure mirelpesClick(Sender: TObject);
+    procedure mirelsimplesClick(Sender: TObject);
   private
     procedure AbreMesFiscal();
     procedure FechaMesFiscal();
@@ -87,7 +90,15 @@ begin
     if not fdmBase.TestaVersao(versao) then
     begin
        Showmessage('Banco de dados com versão errada');
-       application.Terminate;
+       if ShowConfirm('Atualizar Banco de dados') then
+       begin
+          fdmbase.AtualizarBanco()
+       end
+       else
+       begin
+         application.Terminate;
+       end;
+
     end;
 
   except
@@ -187,6 +198,11 @@ begin
 end;
 
 procedure Tfrmmain.mirelpesClick(Sender: TObject);
+begin
+
+end;
+
+procedure Tfrmmain.mirelsimplesClick(Sender: TObject);
 begin
   fdmBase.zqrycadpes.sql.text := 'select * from cadpes order by nome';
   fdmBase.zqrycadpes.prepare;

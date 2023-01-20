@@ -224,6 +224,13 @@ object frmmain: Tfrmmain
         object mirelpes: TMenuItem
           Caption = 'Relatorio'
           OnClick = mirelpesClick
+          object mirelsimples: TMenuItem
+            Caption = 'Relatório Simples'
+            OnClick = mirelsimplesClick
+          end
+          object MenuItem11: TMenuItem
+            Caption = 'Relatório Endereço'
+          end
         end
       end
     end

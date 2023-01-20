@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, ExtCtrls, DBCtrls, DBGrids, rxlookup, rxdbcomb, AnchorDockPanel,
-  dmbase, setmain, funcoes, relcadpes;
+  ComCtrls, ExtCtrls, DBCtrls, DBGrids, Menus, rxlookup, rxdbcomb,
+  AnchorDockPanel, dmbase, setmain, funcoes, relcadpes;
 
 type
 
@@ -15,15 +15,21 @@ type
 
   TfrmCadPes = class(TForm)
     btAdicionar: TSpeedButton;
+    btAdicionarEnd: TSpeedButton;
+    btCancelarEnd: TSpeedButton;
     btSalvar: TSpeedButton;
     btCancelar: TSpeedButton;
+    btSalvarEnd: TSpeedButton;
     cbTipoPessoa: TComboBox;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
+    DBGridCadEnd: TDBGrid;
+    DBNavigator2: TDBNavigator;
     DBText1: TDBText;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
     dscadpes: TDataSource;
+    dscadend: TDataSource;
     edDocumento: TEdit;
     edpesnome: TEdit;
     Label1: TLabel;
@@ -33,35 +39,45 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    MenuItem1: TMenuItem;
     PageControl1: TPageControl;
+    Panel1: TPanel;
+    Panel2: TPanel;
     pncontrole: TPanel;
     pnTop: TAnchorDockPanel;
     pnclient: TAnchorDockPanel;
     DBcbtipopessoa: TRxDBComboBox;
     btPesquisar: TSpeedButton;
     btEditar: TSpeedButton;
+    popGrid: TPopupMenu;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     btImpRel: TToggleBox;
     btExpCSV: TToggleBox;
+    tsEndereco: TTabSheet;
     tsRegistro: TTabSheet;
     tsGrid: TTabSheet;
     procedure btAdicionarClick(Sender: TObject);
+    procedure btAdicionarEndClick(Sender: TObject);
     procedure btCancelarClick(Sender: TObject);
+    procedure btCancelarEndClick(Sender: TObject);
     procedure btEditarClick(Sender: TObject);
     procedure btImpRelChange(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
+    procedure btSalvarEndClick(Sender: TObject);
     procedure cbTipoPessoaChange(Sender: TObject);
+    procedure dscadendStateChange(Sender: TObject);
     procedure dscadpesDataChange(Sender: TObject; Field: TField);
     procedure dscadpesStateChange(Sender: TObject);
     procedure edpesnomeKeyPress(Sender: TObject; var Key: char);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btPesquisarClick(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
   private
 
   public
-
+    procedure AdicionarEndereco();
   end;
 
 var
@@ -83,6 +99,11 @@ begin
   fdmbase.zqrycadpes.Cancel;
 
 
+end;
+
+procedure TfrmCadPes.btCancelarEndClick(Sender: TObject);
+begin
+  fdmbase.zcadend.Cancel;
 end;
 
 procedure TfrmCadPes.btEditarClick(Sender: TObject);
@@ -117,14 +138,41 @@ begin
   fdmbase.zqrycadpes.Append;
 end;
 
+procedure TfrmCadPes.btAdicionarEndClick(Sender: TObject);
+begin
+  AdicionarEndereco();
+end;
+
 procedure TfrmCadPes.btSalvarClick(Sender: TObject);
 begin
   fdmbase.zqrycadpes.post;
 end;
 
+procedure TfrmCadPes.btSalvarEndClick(Sender: TObject);
+begin
+  fdmBase.zcadend.post;
+end;
+
 procedure TfrmCadPes.cbTipoPessoaChange(Sender: TObject);
 begin
 
+end;
+
+procedure TfrmCadPes.dscadendStateChange(Sender: TObject);
+begin
+  if  dscadend.State in [dsEdit, dsInsert] then
+  begin
+    tsEndereco.Enabled:=true;
+    tsEndereco.show;
+  end
+  else
+  begin
+    tsEndereco.Enabled:=false;
+    if (PageControl1.ActivePage = tsEndereco) then
+    begin
+      tsEndereco.show;
+    end;
+  end;
 end;
 
 procedure TfrmCadPes.dscadpesDataChange(Sender: TObject; Field: TField);
@@ -167,6 +215,32 @@ end;
 procedure TfrmCadPes.btPesquisarClick(Sender: TObject);
 begin
   fdmBase.PesquisaCadPes(edpesnome.text, cbTipoPessoa.ItemIndex, edDocumento.Text);
+end;
+
+procedure TfrmCadPes.MenuItem1Click(Sender: TObject);
+begin
+  AdicionarEndereco();
+end;
+
+procedure TfrmCadPes.AdicionarEndereco;
+begin
+  if fdmbase.zqrycadpes.Active then
+  begin
+    if not fdmbase.zqrycadpes.IsEmpty then
+    begin
+         fdmbase.zcadend.Append;
+         fdmbase.zcadend.FieldByName('idcadpes').asinteger := fdmbase.zqrycadpes.FieldByName('ind').asinteger;
+    end
+    else
+    begin
+      ShowMessage('Cadastre Primeiro um Endereço!');
+    end;
+
+  end
+  else
+  begin
+    ShowMessage('Realize primeiro a pesquisa!');
+  end;
 end;
 
 end.
