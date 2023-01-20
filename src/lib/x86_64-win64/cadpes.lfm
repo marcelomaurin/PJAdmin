@@ -110,9 +110,9 @@ object frmCadPes: TfrmCadPes
       Height = 331
       Top = 1
       Width = 707
-      ActivePage = TabSheet2
+      ActivePage = tsGrid
       Align = alClient
-      TabIndex = 2
+      TabIndex = 0
       TabOrder = 0
       object tsGrid: TTabSheet
         Caption = 'Dados'
@@ -141,6 +141,7 @@ object frmCadPes: TfrmCadPes
             ChildSizing.ControlsPerLine = 100
             ClientHeight = 25
             ClientWidth = 241
+            DataSource = dmBase.dscadpes
             Options = []
             TabOrder = 0
             VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbRefresh]
@@ -170,7 +171,7 @@ object frmCadPes: TfrmCadPes
           Align = alClient
           Color = clWindow
           Columns = <>
-          DataSource = dmBase.dscadpes
+          DataSource = dscadpes
           TabOrder = 1
         end
       end
@@ -283,7 +284,7 @@ object frmCadPes: TfrmCadPes
           Caption = 'Cancelar'
           OnClick = btCancelarClick
         end
-        object RxDBComboBox1: TRxDBComboBox
+        object DBcbtipopessoa: TRxDBComboBox
           Left = 7
           Height = 23
           Top = 114
@@ -308,7 +309,7 @@ object frmCadPes: TfrmCadPes
     end
   end
   object dscadpes: TDataSource
-    DataSet = dmBase.zcadpes
+    DataSet = dmBase.zqrycadpes
     OnStateChange = dscadpesStateChange
     OnDataChange = dscadpesDataChange
     Left = 128

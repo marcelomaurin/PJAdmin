@@ -37,7 +37,7 @@ type
     pncontrole: TPanel;
     pnTop: TAnchorDockPanel;
     pnclient: TAnchorDockPanel;
-    RxDBComboBox1: TRxDBComboBox;
+    DBcbtipopessoa: TRxDBComboBox;
     btPesquisar: TSpeedButton;
     btEditar: TSpeedButton;
     TabSheet1: TTabSheet;
@@ -75,12 +75,12 @@ implementation
 
 procedure TfrmCadPes.FormCreate(Sender: TObject);
 begin
-  fdmbase.zcadpes.open;
+  //fdmbase.zqrycadpes.open;
 end;
 
 procedure TfrmCadPes.btCancelarClick(Sender: TObject);
 begin
-  fdmbase.zcadpes.Cancel;
+  fdmbase.zqrycadpes.Cancel;
 
 
 end;
@@ -89,15 +89,12 @@ procedure TfrmCadPes.btEditarClick(Sender: TObject);
 begin
   if not fdmbase.zcadpes.Active then
   begin
-    fdmbase.zcadpes.open;
-    fdmBase.zcadpes.Filtered := true;
-    fdmBase.zcadpes.Filter:= ' ind = '+ inttostr(fdmbase.zqrycadpes.fieldbyname('').asinteger);
-  end;
-  if not fdmbase.zcadpes.IsEmpty then
-  begin
-    dscadpes.DataSet := fdmbase.zcadpes;
+    btPesquisarClick(self);
 
-    fdmbase.zcadpes.Edit;
+  end;
+  if not fdmbase.zqrycadpes.IsEmpty then
+  begin
+    fdmbase.zqrycadpes.Edit;
   end;
 end;
 
@@ -107,26 +104,22 @@ begin
   frmrelcadpes.RLReport1.Prepare;
   frmrelcadpes.RLReport1.Preview(nil);
   frmrelcadpes.Free;
-  frmrelcadpes :
+  frmrelcadpes := nil;
 end;
 
 procedure TfrmCadPes.btAdicionarClick(Sender: TObject);
 begin
-  if not fdmbase.zcadpes.Active then
+  if not fdmbase.zqrycadpes.Active then
   begin
-    fdmBase.zcadpes.Filtered := false;
-    fdmBase.zcadpes.Filter:= '';
-
-    fdmbase.zcadpes.open;
+    btPesquisarClick(self;
   end;
 
-  dscadpes.DataSet := fdmbase.zcadpes;
-  fdmbase.zcadpes.Append;
+  fdmbase.zqrycadpes.Append;
 end;
 
 procedure TfrmCadPes.btSalvarClick(Sender: TObject);
 begin
-  fdmbase.zcadpes.post;
+  fdmbase.zqrycadpes.post;
 end;
 
 procedure TfrmCadPes.cbTipoPessoaChange(Sender: TObject);
@@ -165,7 +158,10 @@ end;
 
 procedure TfrmCadPes.FormDestroy(Sender: TObject);
 begin
-  fdmbase.zcadpes.close;
+  if fdmbase.zqrycadpes.Active then
+  begin
+    fdmbase.zqrycadpes.close;
+  end;
 end;
 
 procedure TfrmCadPes.btPesquisarClick(Sender: TObject);

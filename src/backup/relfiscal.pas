@@ -12,6 +12,8 @@ type
 
   { TRelfiscal1 }
 
+  { TfrmRelfiscal }
+
   TfrmRelfiscal = class(TForm)
     dsrep: TDataSource;
     RLBand1: TRLBand;

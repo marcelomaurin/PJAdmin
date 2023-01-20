@@ -13,9 +13,7 @@ object dmBase: TdmBase
       'controls_cp=CP_UTF8'
     )
     Port = 0
-    Database = 'D:\projetos\maurinsoft\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
-    LibraryLocation = 'D:\projetos\maurinsoft\Etiquetas\sqlite\win64\sqlite3.dll'
     Left = 48
     Top = 16
   end
@@ -115,7 +113,9 @@ object dmBase: TdmBase
       'select * from cadpes order by nome'
     )
     Params = <>
-    Left = 136
+    UpdateMode = umUpdateAll
+    WhereMode = wmWhereAll
+    Left = 80
     Top = 203
     object zqrycadpesind: TLargeintField
       FieldKind = fkData
@@ -157,14 +157,14 @@ object dmBase: TdmBase
     end
   end
   object dscadpes: TDataSource
-    DataSet = zcadpes
+    DataSet = zqrycadpes
     Left = 40
     Top = 203
   end
   object zcadpes: TZTable
     Connection = zcon
     TableName = 'cadpes'
-    Left = 81
+    Left = 128
     Top = 203
     object zcadpesind: TLargeintField
       FieldKind = fkData

@@ -481,6 +481,7 @@ function TdmBase.PesquisaCadPes(Nome: String; TipoPessoa: integer;
   Documento: string): boolean;
 var
    resultado : boolean;
+   valor : integer;
 begin
    resultado := true;
    try
@@ -495,7 +496,8 @@ begin
     end;
     if (TipoPessoa <> 0) then
     begin
-      if (pos(zqrycadpes.sql.text,'where')<> 0) then
+      valor := pos('where',zqrycadpes.sql.text);
+      if (valor= 0) then
       begin
          zqrycadpes.sql.text := zqrycadpes.sql.text +' where TipoPessoa = '+ inttostr(TipoPessoa);
       end
@@ -507,7 +509,8 @@ begin
 
     if (Documento <> '') then
     begin
-      if (pos(zqrycadpes.sql.text,'where')<> 0) then
+      valor := pos('where',zqrycadpes.sql.text);
+      if (valor= 0) then
       begin
          zqrycadpes.sql.text := zqrycadpes.sql.text + ' where documento like "%'+ Documento+'%" ';
       end
@@ -516,11 +519,13 @@ begin
          zqrycadpes.sql.text := zqrycadpes.sql.text + ' and documento like "'+ Documento+'%" ';
       end
     end;
-    //fdmbase.zcadpes.;
+
 
     //zcadpes.open;
-    //showmessage(zqrycadpes.sql.text);
+    showmessage(zqrycadpes.sql.text);
+    zqrycadpes.Prepare;
     zqrycadpes.open;
+    //dscadpes.DataSet := zcadpes;
    except
      resultado := false;
    end;

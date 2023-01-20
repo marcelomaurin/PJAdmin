@@ -1,4 +1,4 @@
-object Relfiscal: TfrmRelfiscal
+object frmRelfiscal: TfrmRelfiscal
   Left = 428
   Height = 498
   Top = 300
@@ -24,9 +24,37 @@ object Relfiscal: TfrmRelfiscal
       object RLLabel1: TRLLabel
         Left = 272
         Height = 16
-        Top = 20
+        Top = 8
         Width = 188
         Caption = 'Relatório de Fechamento Fiscal'
+      end
+      object RLLabel2: TRLLabel
+        Left = 16
+        Height = 16
+        Top = 40
+        Width = 33
+        Caption = 'Mês:'
+      end
+      object RLLabel3: TRLLabel
+        Left = 136
+        Height = 16
+        Top = 40
+        Width = 31
+        Caption = 'Ano:'
+      end
+      object RLLabel4: TRLLabel
+        Left = 224
+        Height = 16
+        Top = 40
+        Width = 66
+        Caption = 'Descrição:'
+      end
+      object RLLabel5: TRLLabel
+        Left = 544
+        Height = 16
+        Top = 40
+        Width = 46
+        Caption = 'Status:'
       end
     end
     object RLDetailGrid1: TRLDetailGrid
@@ -35,61 +63,33 @@ object Relfiscal: TfrmRelfiscal
       Top = 94
       Width = 718
       object RLDBText1: TRLDBText
-        Left = 56
+        Left = 16
         Height = 16
         Top = 11
         Width = 59
         DataField = 'mesfiscal'
         DataSource = dsrep
       end
-      object RLLabel2: TRLLabel
-        Left = 16
-        Height = 16
-        Top = 11
-        Width = 33
-        Caption = 'Mês:'
-      end
-      object RLLabel3: TRLLabel
-        Left = 136
-        Height = 16
-        Top = 11
-        Width = 31
-        Caption = 'Ano:'
-      end
       object RLDBText2: TRLDBText
-        Left = 168
+        Left = 136
         Height = 16
         Top = 11
         Width = 55
         DataField = 'anofiscal'
         DataSource = dsrep
       end
-      object RLLabel4: TRLLabel
-        Left = 240
-        Height = 16
-        Top = 11
-        Width = 66
-        Caption = 'Descrição:'
-      end
       object RLDBText3: TRLDBText
-        Left = 304
+        Left = 224
         Height = 16
         Top = 11
         Width = 60
         DataField = 'descricao'
         DataSource = dsrep
       end
-      object RLLabel5: TRLLabel
+      object RLDBText4: TRLDBText
         Left = 544
         Height = 16
-        Top = 11
-        Width = 46
-        Caption = 'Status:'
-      end
-      object RLDBText4: TRLDBText
-        Left = 592
-        Height = 16
-        Top = 11
+        Top = 16
         Width = 40
         DataField = 'status'
         DataSource = dsrep
