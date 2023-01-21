@@ -16,6 +16,7 @@ type
 
   TdmBase = class(TDataModule)
     dscadpes: TDataSource;
+    dscadend: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
     zcadend: TZTable;
@@ -33,6 +34,19 @@ type
     zcadpesTipoPessoa: TLargeintField;
     zcon: TZConnection;
     zqry: TZQuery;
+    zqrycadend: TZQuery;
+    zqrycadendBairro: TStringField;
+    zqrycadendCEP: TStringField;
+    zqrycadendCidade: TStringField;
+    zqrycadendDocumento: TStringField;
+    zqrycadendID: TLargeintField;
+    zqrycadendIDCADPES: TLargeintField;
+    zqrycadendind: TLargeintField;
+    zqrycadendLogradouro: TStringField;
+    zqrycadendNome: TStringField;
+    zqrycadendOBS: TStringField;
+    zqrycadendReferencia: TStringField;
+    zqrycadendTipoPessoa: TLargeintField;
     zqrycadpes: TZQuery;
     zqrycadpesDocumento: TStringField;
     zqrycadpesind: TLargeintField;
@@ -79,7 +93,9 @@ type
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
     function PesquisaCadPes( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
+    function PesquisaCadEnd( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
     function AtualizarBanco(Versao: String): boolean;
+    function ExportaCadEnd( Nome : String; TipoPessoa: integer; Documento: string; Filename: String) : boolean;
   end;
 
 var
@@ -544,6 +560,60 @@ begin
 
 end;
 
+function TdmBase.PesquisaCadEnd(Nome: String; TipoPessoa: integer;
+  Documento: string): boolean;
+var
+   resultado : boolean;
+   valor : integer;
+begin
+   resultado := true;
+   try
+    zqrycadend.close;
+
+    zqrycadend.sql.text := 'select * from cadpes pes, cadend end';
+    zqrycadend.sql.text := zqrycadend.sql.text + ' where pes.ind = end.idcadpes ';
+    if (Nome <> '') then
+    begin
+      zqrycadend.sql.text := zqrycadend.sql.text + ' and nome like "%'+ Nome+'%" ';
+    end;
+    if (TipoPessoa <> 0) then
+    begin
+      valor := pos('where',zqrycadpes.sql.text);
+      if (valor= 0) then
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text +' where TipoPessoa = '+ inttostr(TipoPessoa);
+      end
+      else
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' and TipoPessoa = '+ inttostr(TipoPessoa);
+      end;
+    end;
+
+    if (Documento <> '') then
+    begin
+      valor := pos('where',zqrycadend.sql.text);
+      if (valor= 0) then
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' where documento like "%'+ Documento+'%" ';
+      end
+      else
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' and documento like "'+ Documento+'%" ';
+      end
+    end;
+
+    zqrycadend.Prepare;
+    zqrycadend.open;
+
+   except
+     resultado := false;
+   end;
+   result := resultado;
+
+end;
+
+
+
 //Script para atualização de banco de dados
 function TdmBase.AtualizarBanco(Versao: String): boolean;
 var
@@ -566,6 +636,81 @@ begin
    end;
 
    result := resultado;
+end;
+
+function TdmBase.ExportaCadEnd(Nome: String; TipoPessoa: integer;
+  Documento: string; Filename: String): boolean;
+var
+   resultado : boolean;
+   valor : integer;
+   lst : TStringList;
+begin
+   resultado := true;
+   try
+    zqrycadend.close;
+
+    zqrycadend.sql.text := 'select * from cadpes pes, cadend end';
+    zqrycadend.sql.text := zqrycadend.sql.text + ' where pes.ind = end.idcadpes ';
+    if (Nome <> '') then
+    begin
+      zqrycadend.sql.text := zqrycadend.sql.text + ' and nome like "%'+ Nome+'%" ';
+    end;
+    if (TipoPessoa <> 0) then
+    begin
+      valor := pos('where',zqrycadpes.sql.text);
+      if (valor= 0) then
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text +' where TipoPessoa = '+ inttostr(TipoPessoa);
+      end
+      else
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' and TipoPessoa = '+ inttostr(TipoPessoa);
+      end;
+    end;
+
+    if (Documento <> '') then
+    begin
+      valor := pos('where',zqrycadend.sql.text);
+      if (valor= 0) then
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' where documento like "%'+ Documento+'%" ';
+      end
+      else
+      begin
+         zqrycadend.sql.text := zqrycadend.sql.text + ' and documento like "'+ Documento+'%" ';
+      end
+    end;
+
+    zqrycadend.Prepare;
+    zqrycadend.open;
+    zqrycadend.first;
+    (*cria a estrutura do csv*)
+
+    lst := TStringList.create;
+    lst.Append('Nome,TipoPessoa,Documento,Logradouro,Bairro,Cidade,CEP,Referencia');
+    (*Migra os dados*)
+    while not zqrycadend.EOF do
+    begin
+       lst.Append(
+              zqrycadend.FieldByName('Nome').asstring + ',' +
+              inttostr(zqrycadend.FieldByName('TipoPessoa').asinteger) + ','+
+              zqrycadend.FieldByName('documento').asstring + ','+
+              zqrycadend.FieldByName('Logradouro').asstring + ','+
+              zqrycadend.FieldByName('Bairro').asstring + ','
+              zqrycadend.FieldByName('Cidade').asstring + ','
+              zqrycadend.FieldByName('CEP').asstring + ','
+              zqrycadend.FieldByName('Referencia').asstring
+       );
+       zqrycadend.next;
+    end;
+    zqrycadend.close;
+    lst.SaveToFile(filename);
+
+   except
+     resultado := false;
+   end;
+   result := resultado;
+
 end;
 
 

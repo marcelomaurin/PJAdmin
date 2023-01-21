@@ -230,6 +230,7 @@ object frmmain: Tfrmmain
           end
           object MenuItem11: TMenuItem
             Caption = 'Relatório Endereço'
+            OnClick = MenuItem11Click
           end
         end
       end

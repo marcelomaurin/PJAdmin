@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
-  ComCtrls, ExtCtrls, DBCtrls, DBGrids, Menus, rxlookup, rxdbcomb,
-  AnchorDockPanel, dmbase, setmain, funcoes, relcadpes;
+  ComCtrls, ExtCtrls, DBCtrls, DBGrids, Menus, EditBtn, rxlookup, rxdbcomb,
+  AnchorDockPanel, dmbase, setmain, funcoes, relcadpes, relcadend;
 
 type
 
@@ -17,6 +17,7 @@ type
     btAdicionar: TSpeedButton;
     btAdicionarEnd: TSpeedButton;
     btCancelarEnd: TSpeedButton;
+    btImpRel1: TToggleBox;
     btSalvar: TSpeedButton;
     btCancelar: TSpeedButton;
     btSalvarEnd: TSpeedButton;
@@ -32,6 +33,7 @@ type
     dscadend: TDataSource;
     edDocumento: TEdit;
     edpesnome: TEdit;
+    edFilename: TFileNameEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -39,6 +41,7 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
+    Label8: TLabel;
     MenuItem1: TMenuItem;
     PageControl1: TPageControl;
     Panel1: TPanel;
@@ -62,7 +65,12 @@ type
     procedure btCancelarClick(Sender: TObject);
     procedure btCancelarEndClick(Sender: TObject);
     procedure btEditarClick(Sender: TObject);
+    procedure btExpCSVChange(Sender: TObject);
+    procedure btExpCSVClick(Sender: TObject);
+    procedure btImpRel1Change(Sender: TObject);
+    procedure btImpRel1Click(Sender: TObject);
     procedure btImpRelChange(Sender: TObject);
+    procedure btImpRelClick(Sender: TObject);
     procedure btSalvarClick(Sender: TObject);
     procedure btSalvarEndClick(Sender: TObject);
     procedure cbTipoPessoaChange(Sender: TObject);
@@ -119,7 +127,41 @@ begin
   end;
 end;
 
+procedure TfrmCadPes.btExpCSVChange(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmCadPes.btExpCSVClick(Sender: TObject);
+begin
+  if (edFilename.text <> '') then
+  begin
+      fdmBase.ExportaCadEnd(edpesnome.text, cbTipoPessoa.ItemIndex, edDocumento.Text, edFilename.text);
+      ShowMessage('Arquivo Exportado com Sucesso!');
+  end;
+end;
+
+procedure TfrmCadPes.btImpRel1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmCadPes.btImpRel1Click(Sender: TObject);
+begin
+  fdmBase.PesquisaCadEnd(edpesnome.Text,cbTipoPessoa.ItemIndex,edDocumento.text);
+  frmrelcadend := Tfrmrelcadend.create(self);
+  frmrelcadend.RLReport1.Prepare;
+  frmrelcadend.RLReport1.Preview(nil);
+  frmrelcadend.Free;
+  frmrelcadend := nil;
+end;
+
 procedure TfrmCadPes.btImpRelChange(Sender: TObject);
+begin
+
+end;
+
+procedure TfrmCadPes.btImpRelClick(Sender: TObject);
 begin
   frmrelcadpes := Tfrmrelcadpes.create(self);
   frmrelcadpes.RLReport1.Prepare;
@@ -228,14 +270,13 @@ begin
   begin
     if not fdmbase.zqrycadpes.IsEmpty then
     begin
-         fdmbase.zcadend.Append;
-         fdmbase.zcadend.FieldByName('idcadpes').asinteger := fdmbase.zqrycadpes.FieldByName('id').asinteger;
+      fdmbase.zcadend.Append;
+      fdmbase.zcadend.FieldByName('idcadpes').asinteger := fdmbase.zqrycadpes.FieldByName('ind').asinteger;
     end
     else
     begin
       ShowMessage('Cadastre Primeiro um Endereço!');
     end;
-
   end
   else
   begin

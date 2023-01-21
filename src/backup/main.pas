@@ -50,6 +50,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure imgconfigClick(Sender: TObject);
+    procedure MenuItem11Click(Sender: TObject);
     procedure miaberturaClick(Sender: TObject);
     procedure MICLOSEClick(Sender: TObject);
     procedure miconfigClick(Sender: TObject);
@@ -92,7 +93,7 @@ begin
        Showmessage('Banco de dados com versão errada');
        if ShowConfirm('Atualizar Banco de dados') then
        begin
-          fdmbase.AtualizarBanco()
+          fdmbase.AtualizarBanco(versao);
        end
        else
        begin
@@ -128,6 +129,16 @@ begin
   frmconfig.showmodal;
   frmconfig.free;
   frmconfig := nil;
+end;
+
+procedure Tfrmmain.MenuItem11Click(Sender: TObject);
+begin
+  fdmBase.PesquisaCadEnd('',0,'');
+  frmrelcadend := Tfrmrelcadend.create(self);
+  frmrelcadend.RLReport1.Prepare;
+  frmrelcadend.RLReport1.Preview(nil);
+  frmrelcadend.Free;
+  frmrelcadend := nil;
 end;
 
 procedure Tfrmmain.miaberturaClick(Sender: TObject);

@@ -294,4 +294,135 @@ object dmBase: TdmBase
       Size = 40
     end
   end
+  object zqrycadend: TZQuery
+    Connection = zcon
+    SQL.Strings = (
+      'select * from cadpes pes, cadend end'
+      'where pes.ind = end.idcadpes'
+    )
+    Params = <>
+    Left = 257
+    Top = 224
+    object zqrycadendind: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ind'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadendNome: TStringField
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object zqrycadendTipoPessoa: TLargeintField
+      FieldKind = fkData
+      FieldName = 'TipoPessoa'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadendDocumento: TStringField
+      FieldKind = fkData
+      FieldName = 'Documento'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+    object zqrycadendIDCADPES: TLargeintField
+      FieldKind = fkData
+      FieldName = 'IDCADPES'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadendID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadendLogradouro: TStringField
+      FieldKind = fkData
+      FieldName = 'Logradouro'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object zqrycadendBairro: TStringField
+      FieldKind = fkData
+      FieldName = 'Bairro'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqrycadendCidade: TStringField
+      FieldKind = fkData
+      FieldName = 'Cidade'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqrycadendCEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object zqrycadendOBS: TStringField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object zqrycadendReferencia: TStringField
+      FieldKind = fkData
+      FieldName = 'Referencia'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+  end
+  object dscadend: TDataSource
+    DataSet = zqrycadend
+    Left = 216
+    Top = 224
+  end
 end

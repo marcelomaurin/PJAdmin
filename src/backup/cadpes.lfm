@@ -110,9 +110,9 @@ object frmCadPes: TfrmCadPes
       Height = 331
       Top = 1
       Width = 707
-      ActivePage = tsGrid
+      ActivePage = TabSheet1
       Align = alClient
-      TabIndex = 0
+      TabIndex = 1
       TabOrder = 0
       object tsGrid: TTabSheet
         Caption = 'Dados'
@@ -181,12 +181,36 @@ object frmCadPes: TfrmCadPes
         ClientHeight = 303
         ClientWidth = 699
         object btExpCSV: TToggleBox
-          Left = 320
+          Left = 432
           Height = 41
-          Top = 32
-          Width = 111
-          Caption = 'Exportar para CSV'
+          Top = 48
+          Width = 168
+          Caption = 'Exportar para CSV Endereços'
+          OnClick = btExpCSVClick
           TabOrder = 0
+        end
+        object Label8: TLabel
+          Left = 4
+          Height = 15
+          Top = 16
+          Width = 119
+          Caption = 'Local para exportação:'
+          ParentColor = False
+        end
+        object edFilename: TFileNameEdit
+          Left = 4
+          Height = 23
+          Top = 32
+          Width = 244
+          FileName = 'cadend.csv'
+          DialogTitle = 'Arquivo de Exportação de Dados'
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 23
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 1
+          Text = 'cadend.csv'
         end
       end
       object TabSheet2: TTabSheet
@@ -197,10 +221,20 @@ object frmCadPes: TfrmCadPes
           Left = 24
           Height = 41
           Top = 16
-          Width = 111
+          Width = 216
           Caption = 'Imprimir Relatório'
           OnChange = btImpRelChange
+          OnClick = btImpRelClick
           TabOrder = 0
+        end
+        object btImpRel1: TToggleBox
+          Left = 24
+          Height = 41
+          Top = 80
+          Width = 216
+          Caption = 'Imprimir Relatório Endereço'
+          OnClick = btImpRel1Click
+          TabOrder = 1
         end
       end
       object tsRegistro: TTabSheet

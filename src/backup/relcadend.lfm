@@ -1,0 +1,187 @@
+object frmrelcadend: Tfrmrelcadend
+  Left = 780
+  Height = 290
+  Top = 350
+  Width = 829
+  Caption = 'frmrelcadend'
+  ClientHeight = 290
+  ClientWidth = 829
+  LCLVersion = '2.2.2.0'
+  object RLReport1: TRLReport
+    Left = 0
+    Height = 1123
+    Top = 0
+    Width = 794
+    DataSource = frmCadPes.dscadend
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Title = 'Relatório Cadastro de Pessoas'
+    JobTitle = 'Relatorio CadPes'
+    object RLDetailGrid1: TRLDetailGrid
+      Left = 38
+      Height = 72
+      Top = 134
+      Width = 718
+      object RLDBText1: TRLDBText
+        Left = 144
+        Height = 16
+        Top = 8
+        Width = 38
+        DataField = 'Nome'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText2: TRLDBText
+        Left = 8
+        Height = 16
+        Top = 8
+        Width = 21
+        DataField = 'ind'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText3: TRLDBText
+        Left = 488
+        Height = 16
+        Top = 8
+        Width = 70
+        DataField = 'Documento'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText4: TRLDBText
+        Left = 632
+        Height = 16
+        Top = 8
+        Width = 72
+        DataField = 'TipoPessoa'
+        DataSource = dmBase.dscadend
+        DisplayMask = '1'
+      end
+      object RLDBText5: TRLDBText
+        Left = 9
+        Height = 16
+        Top = 24
+        Width = 68
+        DataField = 'Logradouro'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText6: TRLDBText
+        Left = 336
+        Height = 16
+        Top = 24
+        Width = 38
+        DataField = 'Bairro'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText7: TRLDBText
+        Left = 9
+        Height = 16
+        Top = 40
+        Width = 44
+        DataField = 'Cidade'
+        DataSource = dmBase.dscadend
+      end
+      object RLDBText8: TRLDBText
+        Left = 336
+        Height = 16
+        Top = 40
+        Width = 31
+        DataField = 'CEP'
+        DataSource = dmBase.dscadend
+      end
+    end
+    object RLBand1: TRLBand
+      Left = 38
+      Height = 96
+      Top = 38
+      Width = 718
+      BandType = btHeader
+      object RLLabel3: TRLLabel
+        Left = 9
+        Height = 16
+        Top = 40
+        Width = 20
+        Caption = 'ID:'
+      end
+      object RLLabel2: TRLLabel
+        Left = 144
+        Height = 16
+        Top = 40
+        Width = 42
+        Caption = 'Nome:'
+      end
+      object RLLabel4: TRLLabel
+        Left = 488
+        Height = 16
+        Top = 40
+        Width = 74
+        Caption = 'Documento:'
+      end
+      object RLLabel5: TRLLabel
+        Left = 632
+        Height = 16
+        Top = 40
+        Width = 84
+        Caption = 'Tipo Pessoa: '
+      end
+      object RLLabel1: TRLLabel
+        Left = 272
+        Height = 16
+        Top = 8
+        Width = 217
+        Caption = 'Relatório de Cadastro de Pessoas'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLLabel7: TRLLabel
+        Left = 8
+        Height = 16
+        Top = 56
+        Width = 72
+        Caption = 'Logradouro:'
+      end
+      object RLLabel8: TRLLabel
+        Left = 336
+        Height = 16
+        Top = 56
+        Width = 42
+        Caption = 'Bairro:'
+      end
+      object RLLabel9: TRLLabel
+        Left = 8
+        Height = 16
+        Top = 72
+        Width = 48
+        Caption = 'Cidade:'
+      end
+      object RLLabel10: TRLLabel
+        Left = 336
+        Height = 16
+        Top = 72
+        Width = 48
+        Caption = 'Cidade:'
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 38
+      Height = 40
+      Top = 206
+      Width = 718
+      BandType = btFooter
+      object RLLabel6: TRLLabel
+        Left = 208
+        Height = 16
+        Top = 16
+        Width = 379
+        Caption = 'Maurinsoft Serviços de Informática - Todos os direitos reservados'
+      end
+    end
+  end
+  object dsrep: TDataSource
+    DataSet = dmBase.zqrycadpes
+    Left = 171
+    Top = 212
+  end
+end
