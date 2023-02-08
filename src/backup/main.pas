@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
   StdCtrls, dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal, cadpes,
-  relcadpes;
+  relcadpes, relcadend, TPDesp;
 
 const versao = '0.03';
 
@@ -51,6 +51,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure imgconfigClick(Sender: TObject);
     procedure MenuItem11Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
     procedure miaberturaClick(Sender: TObject);
     procedure MICLOSEClick(Sender: TObject);
     procedure miconfigClick(Sender: TObject);
@@ -139,6 +140,15 @@ begin
   frmrelcadend.RLReport1.Preview(nil);
   frmrelcadend.Free;
   frmrelcadend := nil;
+end;
+
+procedure Tfrmmain.MenuItem3Click(Sender: TObject);
+begin
+  (*Tipo despesa*)
+  frmTPDesp := TfrmTPDesp.create(self);
+  frmTPDesp.ShowModal;
+  frmTPDesp.Free;
+  frmTPDesp := nil;
 end;
 
 procedure Tfrmmain.miaberturaClick(Sender: TObject);

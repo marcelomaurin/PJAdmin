@@ -17,6 +17,7 @@ type
   TdmBase = class(TDataModule)
     dscadpes: TDataSource;
     dscadend: TDataSource;
+    dscadpes1: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
     zcadend: TZTable;
@@ -28,6 +29,9 @@ type
     zcadendLogradouro: TStringField;
     zcadendOBS: TStringField;
     zcadendReferencia: TStringField;
+    zcadtpdesp: TZTable;
+    zcadtpdespDescricao: TStringField;
+    zcadtpdespID: TLargeintField;
     zcadpesDocumento: TStringField;
     zcadpesind: TLargeintField;
     zcadpesNome: TStringField;
@@ -48,11 +52,14 @@ type
     zqrycadendReferencia: TStringField;
     zqrycadendTipoPessoa: TLargeintField;
     zqrycadpes: TZQuery;
+    zqrycadtpdesp: TZQuery;
     zqrycadpesDocumento: TStringField;
     zqrycadpesind: TLargeintField;
     zqrycadpesNome: TStringField;
     zqrycadpesTipoPessoa: TLargeintField;
     zcadpes: TZTable;
+    zqrycadtpdespDescricao: TStringField;
+    zqrycadtpdespID: TLargeintField;
     zreffiscalanofiscal: TLargeintField;
     zreffiscaldescricao: TStringField;
     zreffiscalmesfiscal: TLargeintField;
@@ -93,6 +100,7 @@ type
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
     function PesquisaCadPes( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
+    function PesquisaTPDesp( Descricao : String): boolean;
     function PesquisaCadEnd( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
     function AtualizarBanco(Versao: String): boolean;
     function ExportaCadEnd( Nome : String; TipoPessoa: integer; Documento: string; Filename: String) : boolean;
@@ -551,6 +559,38 @@ begin
     zqrycadpes.open;
     zcadend.open;
     //dscadpes.DataSet := zcadpes;
+   except
+     resultado := false;
+   end;
+
+
+   result := resultado;
+
+end;
+
+function TdmBase.PesquisaTPDesp(Descricao: String): boolean;
+var
+   resultado : boolean;
+   valor : integer;
+begin
+   resultado := true;
+   try
+    zqrycadtpdesp.close;
+    zcadtpdesp.close;
+
+    zqrycadtpdesp.sql.text := 'select * from cadtpdesp ';
+    if (Descricao <> '') then
+    begin
+      zqrycadtpdesp.sql.text := zqrycadtpdesp.sql.text + ' where Descricao like "%'+ Descricao+'%" ';
+    end;
+
+
+    //zcadtpdesp.open;
+    //showmessage(zqrycadtpdesp.sql.text);
+    zqrycadtpdesp.Prepare;
+    zqrycadtpdesp.open;
+    zcadtpdesp.open;
+
    except
      resultado := false;
    end;

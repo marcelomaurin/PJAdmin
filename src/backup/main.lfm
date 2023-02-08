@@ -1,21 +1,22 @@
 object frmmain: Tfrmmain
   Left = 582
-  Height = 392
+  Height = 490
   Top = 228
-  Width = 803
+  Width = 1004
   Caption = 'Controle de Contas PJ'
-  ClientHeight = 372
-  ClientWidth = 803
+  ClientHeight = 465
+  ClientWidth = 1004
+  DesignTimePPI = 120
   Menu = MainMenu1
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.2.2.0'
+  LCLVersion = '2.2.4.0'
   object imgconfig: TImage
-    Left = 16
-    Height = 90
+    Left = 20
+    Height = 112
     Hint = 'Config'
-    Top = 264
-    Width = 90
+    Top = 320
+    Width = 112
     Anchors = [akLeft, akBottom]
     OnClick = imgconfigClick
     ParentShowHint = False
@@ -133,44 +134,44 @@ object frmmain: Tfrmmain
     Stretch = True
   end
   object Label1: TLabel
-    Left = 360
-    Height = 15
-    Top = 320
-    Width = 184
+    Left = 450
+    Height = 20
+    Top = 399
+    Width = 230
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Maurinsoft Serviços de Informática'
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 344
-    Height = 15
-    Top = 339
-    Width = 224
+    Left = 430
+    Height = 20
+    Top = 423
+    Width = 280
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'email: marcelomaurinmartins@gmail.com'
     ParentColor = False
   end
   object Label3: TLabel
-    Left = 408
-    Height = 15
-    Top = 80
-    Width = 37
+    Left = 510
+    Height = 20
+    Top = 100
+    Width = 46
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Versão:'
     ParentColor = False
   end
   object lbversao: TLabel
-    Left = 408
-    Height = 15
-    Top = 96
-    Width = 6
+    Left = 510
+    Height = 20
+    Top = 120
+    Width = 8
     Anchors = [akTop, akLeft, akRight]
     Caption = '0'
     ParentColor = False
   end
   object MainMenu1: TMainMenu
-    Left = 239
-    Top = 174
+    Left = 299
+    Top = 218
     object miOperacoes: TMenuItem
       Caption = 'Operações'
       object miMesFiscal: TMenuItem
@@ -198,6 +199,7 @@ object frmmain: Tfrmmain
         Caption = 'Despesas'
         object MenuItem3: TMenuItem
           Caption = 'Tipo de Despesas'
+          OnClick = MenuItem3Click
         end
         object MenuItem5: TMenuItem
           Caption = 'Despesas'

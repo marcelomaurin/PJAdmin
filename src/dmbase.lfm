@@ -1,10 +1,11 @@
 object dmBase: TdmBase
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 356
-  HorizontalOffset = 997
-  VerticalOffset = 265
-  Width = 313
+  Height = 445
+  HorizontalOffset = 1246
+  VerticalOffset = 331
+  Width = 391
+  PPI = 120
   object zcon: TZConnection
     ControlsCodePage = cCP_UTF8
     AutoEncodeStrings = True
@@ -13,11 +14,11 @@ object dmBase: TdmBase
       'controls_cp=CP_UTF8'
     )
     Port = 0
-    Database = 'D:\projetos\maurinsoft\PJAdmin\bd\pjdb.db'
+    Database = 'C:\projetos\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
-    LibraryLocation = 'D:\projetos\maurinsoft\PJAdmin\sqlite\win64\sqlite3.dll'
-    Left = 48
-    Top = 16
+    LibraryLocation = 'C:\projetos\PJAdmin\sqlite\win64\sqlite3.dll'
+    Left = 60
+    Top = 20
   end
   object tbcsv: TCSVDataset
     FieldDefs = <>
@@ -28,19 +29,19 @@ object dmBase: TdmBase
     CSVOptions.LineEnding = #13#10
     CSVOptions.IgnoreOuterWhitespace = False
     CSVOptions.QuoteOuterWhitespace = True
-    Left = 248
-    Top = 152
+    Left = 310
+    Top = 190
   end
   object dsCSV: TDataSource
     DataSet = tbcsv
-    Left = 201
-    Top = 152
+    Left = 251
+    Top = 190
   end
   object zversao: TZTable
     Connection = zcon
     TableName = 'versao'
-    Left = 40
-    Top = 280
+    Left = 50
+    Top = 350
     object zversaodtinstall: TStringField
       FieldKind = fkData
       FieldName = 'dtinstall'
@@ -63,14 +64,14 @@ object dmBase: TdmBase
   object zqry: TZQuery
     Connection = zcon
     Params = <>
-    Left = 257
-    Top = 291
+    Left = 321
+    Top = 364
   end
   object zreffiscal: TZTable
     Connection = zcon
     TableName = 'reffiscal'
-    Left = 104
-    Top = 280
+    Left = 130
+    Top = 350
     object zreffiscalmesfiscal: TLargeintField
       FieldKind = fkData
       FieldName = 'mesfiscal'
@@ -117,8 +118,8 @@ object dmBase: TdmBase
     Params = <>
     UpdateMode = umUpdateAll
     WhereMode = wmWhereAll
-    Left = 80
-    Top = 203
+    Left = 100
+    Top = 254
     object zqrycadpesind: TLargeintField
       FieldKind = fkData
       FieldName = 'ind'
@@ -160,14 +161,14 @@ object dmBase: TdmBase
   end
   object dscadpes: TDataSource
     DataSet = zqrycadpes
-    Left = 40
-    Top = 203
+    Left = 50
+    Top = 254
   end
   object zcadpes: TZTable
     Connection = zcon
     TableName = 'cadpes'
-    Left = 128
-    Top = 203
+    Left = 160
+    Top = 254
     object zcadpesind: TLargeintField
       FieldKind = fkData
       FieldName = 'ind'
@@ -213,8 +214,8 @@ object dmBase: TdmBase
     MasterFields = 'ind'
     MasterSource = dscadpes
     LinkedFields = 'IDCADPES'
-    Left = 128
-    Top = 72
+    Left = 160
+    Top = 90
     object zcadendIDCADPES: TLargeintField
       FieldKind = fkData
       FieldName = 'IDCADPES'
@@ -301,8 +302,8 @@ object dmBase: TdmBase
       'where pes.ind = end.idcadpes'
     )
     Params = <>
-    Left = 257
-    Top = 224
+    Left = 321
+    Top = 280
     object zqrycadendind: TLargeintField
       FieldKind = fkData
       FieldName = 'ind'
@@ -422,7 +423,67 @@ object dmBase: TdmBase
   end
   object dscadend: TDataSource
     DataSet = zqrycadend
-    Left = 216
-    Top = 224
+    Left = 270
+    Top = 280
+  end
+  object zqrycadtpdesp: TZQuery
+    Connection = zcon
+    SQL.Strings = (
+      'select * from cadtpdesp order by descricao'
+    )
+    Params = <>
+    UpdateMode = umUpdateAll
+    WhereMode = wmWhereAll
+    Left = 100
+    Top = 176
+    object zqrycadtpdespID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqrycadtpdespDescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'Descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 40
+    end
+  end
+  object dscadpes1: TDataSource
+    DataSet = zqrycadtpdesp
+    Left = 50
+    Top = 176
+  end
+  object zcadtpdesp: TZTable
+    Connection = zcon
+    TableName = 'CADTPDESP'
+    Left = 160
+    Top = 176
+    object zcadtpdespID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zcadtpdespDescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'Descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 40
+    end
   end
 end

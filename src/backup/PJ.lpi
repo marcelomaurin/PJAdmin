@@ -117,7 +117,15 @@
         <Filename Value="relcadend.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmrelcadend"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tpdesp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTPDesp"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TPDesp"/>
       </Unit>
     </Units>
   </ProjectOptions>
@@ -132,6 +140,9 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
