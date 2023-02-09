@@ -456,7 +456,7 @@ object dmBase: TdmBase
       Size = 40
     end
   end
-  object dscadpes1: TDataSource
+  object dscadtpdesp: TDataSource
     DataSet = zqrycadtpdesp
     Left = 50
     Top = 176

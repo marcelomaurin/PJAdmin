@@ -17,7 +17,7 @@ type
   TdmBase = class(TDataModule)
     dscadpes: TDataSource;
     dscadend: TDataSource;
-    dscadpes1: TDataSource;
+    dscadtpdesp: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
     zcadend: TZTable;

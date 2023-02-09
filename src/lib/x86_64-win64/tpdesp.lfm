@@ -14,7 +14,38 @@ object frmTPDesp: TfrmTPDesp
     Top = 0
     Width = 832
     Align = alTop
+    ClientHeight = 103
+    ClientWidth = 832
     TabOrder = 0
+    object Label1: TLabel
+      Left = 20
+      Height = 20
+      Top = 10
+      Width = 68
+      Caption = 'Descrição:'
+      ParentColor = False
+    end
+    object edpesdescricao: TEdit
+      Left = 20
+      Height = 28
+      Top = 32
+      Width = 400
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      TextHint = 'Pesquisa de Descrição'
+    end
+    object btPesquisar: TSpeedButton
+      Left = 680
+      Height = 34
+      Hint = 'Pesquisar'
+      Top = 56
+      Width = 131
+      Caption = 'Pesquisar'
+      OnClick = btPesquisarClick
+      ShowHint = True
+      ParentShowHint = False
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -22,6 +53,116 @@ object frmTPDesp: TfrmTPDesp
     Top = 103
     Width = 832
     Align = alClient
+    ClientHeight = 416
+    ClientWidth = 832
     TabOrder = 1
+    object PageControl1: TPageControl
+      Left = 1
+      Height = 414
+      Top = 1
+      Width = 830
+      ActivePage = tsdados
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 0
+      object tsdados: TTabSheet
+        Caption = 'Dados'
+        ClientHeight = 381
+        ClientWidth = 822
+        object DBNavigator1: TDBNavigator
+          Left = 32
+          Height = 31
+          Top = 16
+          Width = 301
+          BevelOuter = bvNone
+          ChildSizing.EnlargeHorizontal = crsScaleChilds
+          ChildSizing.EnlargeVertical = crsScaleChilds
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 100
+          ClientHeight = 31
+          ClientWidth = 301
+          DataSource = dmBase.dscadtpdesp
+          Options = []
+          TabOrder = 0
+        end
+        object Panel3: TPanel
+          Left = 0
+          Height = 317
+          Top = 64
+          Width = 822
+          Align = alBottom
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          ClientHeight = 317
+          ClientWidth = 822
+          TabOrder = 1
+          object DBGrid1: TDBGrid
+            Left = 1
+            Height = 315
+            Top = 1
+            Width = 820
+            Align = alClient
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Caption = 'Descrição'
+                FieldName = 'Descricao'
+              end>
+            DataSource = dmBase.dscadtpdesp
+            TabOrder = 0
+          end
+        end
+      end
+      object tsExportacao: TTabSheet
+        Caption = 'Exportação'
+        ClientHeight = 381
+        ClientWidth = 822
+        object Label8: TLabel
+          Left = 5
+          Height = 20
+          Top = 20
+          Width = 151
+          Caption = 'Local para exportação:'
+          ParentColor = False
+        end
+        object edFilename: TFileNameEdit
+          Left = 5
+          Height = 28
+          Top = 40
+          Width = 305
+          FileName = 'tpdesp.csv'
+          DialogTitle = 'Arquivo de Exportação de Dados'
+          FilterIndex = 0
+          HideDirectories = False
+          ButtonWidth = 29
+          NumGlyphs = 1
+          MaxLength = 0
+          TabOrder = 0
+          Text = 'tpdesp.csv'
+        end
+        object btExpCSV: TToggleBox
+          Left = 544
+          Height = 51
+          Top = 60
+          Width = 210
+          Caption = 'Exportar para CSV Tipo de Despesas'
+          TabOrder = 1
+        end
+      end
+      object tsRelatorios: TTabSheet
+        Caption = 'Relatórios'
+        ClientHeight = 381
+        ClientWidth = 822
+        object btImpRel: TToggleBox
+          Left = 30
+          Height = 51
+          Top = 20
+          Width = 270
+          Caption = 'Imprimir Relatório'
+          TabOrder = 0
+        end
+      end
+    end
   end
 end

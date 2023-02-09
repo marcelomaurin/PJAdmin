@@ -13,6 +13,7 @@ object dmBase: TdmBase
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
+    Connected = True
     Port = 0
     Database = 'C:\projetos\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
@@ -428,6 +429,7 @@ object dmBase: TdmBase
   end
   object zqrycadtpdesp: TZQuery
     Connection = zcon
+    Active = True
     SQL.Strings = (
       'select * from cadtpdesp order by descricao'
     )
@@ -456,7 +458,7 @@ object dmBase: TdmBase
       Size = 40
     end
   end
-  object dscadpes1: TDataSource
+  object dscadtpdesp: TDataSource
     DataSet = zqrycadtpdesp
     Left = 50
     Top = 176

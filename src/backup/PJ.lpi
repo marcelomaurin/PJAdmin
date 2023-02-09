@@ -124,6 +124,7 @@
         <Filename Value="tpdesp.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmTPDesp"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TPDesp"/>
       </Unit>

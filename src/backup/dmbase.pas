@@ -17,7 +17,7 @@ type
   TdmBase = class(TDataModule)
     dscadpes: TDataSource;
     dscadend: TDataSource;
-    dscadpes1: TDataSource;
+    dscadtpdesp: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
     zcadend: TZTable;
@@ -575,7 +575,7 @@ var
 begin
    resultado := true;
    try
-    zqrytpdesp.close;
+    zqrycadtpdesp.close;
     zcadtpdesp.close;
 
     zqrycadtpdesp.sql.text := 'select * from cadtpdesp ';

@@ -1,36 +1,37 @@
 object frmCadPes: TfrmCadPes
   Left = 541
-  Height = 429
+  Height = 536
   Top = 254
-  Width = 709
+  Width = 886
   Caption = 'Consulta de Pessoas'
-  ClientHeight = 429
-  ClientWidth = 709
+  ClientHeight = 536
+  ClientWidth = 886
+  DesignTimePPI = 120
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '2.2.2.0'
+  LCLVersion = '2.2.4.0'
   object pnTop: TAnchorDockPanel
     Left = 0
-    Height = 96
+    Height = 120
     Top = 0
-    Width = 709
+    Width = 886
     Align = alTop
-    ClientHeight = 96
-    ClientWidth = 709
+    ClientHeight = 120
+    ClientWidth = 886
     TabOrder = 0
     object Label1: TLabel
-      Left = 16
-      Height = 15
-      Top = 8
-      Width = 36
+      Left = 20
+      Height = 20
+      Top = 10
+      Width = 44
       Caption = 'Nome:'
       ParentColor = False
     end
     object edpesnome: TEdit
-      Left = 16
-      Height = 23
-      Top = 26
-      Width = 320
+      Left = 20
+      Height = 28
+      Top = 32
+      Width = 400
       OnKeyPress = edpesnomeKeyPress
       ParentShowHint = False
       ShowHint = True
@@ -38,20 +39,20 @@ object frmCadPes: TfrmCadPes
       TextHint = 'Pesquisa de Nome'
     end
     object Label2: TLabel
-      Left = 344
-      Height = 15
-      Top = 7
-      Width = 65
+      Left = 430
+      Height = 20
+      Top = 9
+      Width = 81
       Caption = 'Tipo Pessoa:'
       ParentColor = False
     end
     object cbTipoPessoa: TComboBox
-      Left = 344
-      Height = 23
+      Left = 430
+      Height = 28
       Hint = 'Tipo de Pessoa'
-      Top = 27
-      Width = 139
-      ItemHeight = 15
+      Top = 34
+      Width = 174
+      ItemHeight = 20
       ItemIndex = 0
       Items.Strings = (
         'Não definido'
@@ -65,19 +66,19 @@ object frmCadPes: TfrmCadPes
       Text = 'Não definido'
     end
     object Label3: TLabel
-      Left = 496
-      Height = 15
-      Top = 7
-      Width = 66
+      Left = 620
+      Height = 20
+      Top = 9
+      Width = 81
       Caption = 'Documento:'
       ParentColor = False
     end
     object edDocumento: TEdit
-      Left = 496
-      Height = 23
+      Left = 620
+      Height = 28
       Hint = 'Documento de Identificação'
-      Top = 27
-      Width = 200
+      Top = 34
+      Width = 250
       OnKeyPress = edpesnomeKeyPress
       ParentShowHint = False
       ShowHint = True
@@ -85,11 +86,11 @@ object frmCadPes: TfrmCadPes
       TextHint = 'nro documento'
     end
     object btPesquisar: TSpeedButton
-      Left = 591
-      Height = 27
+      Left = 739
+      Height = 34
       Hint = 'Pesquisar'
-      Top = 61
-      Width = 105
+      Top = 76
+      Width = 131
       Caption = 'Pesquisar'
       OnClick = btPesquisarClick
       ShowHint = True
@@ -98,40 +99,40 @@ object frmCadPes: TfrmCadPes
   end
   object pnclient: TAnchorDockPanel
     Left = 0
-    Height = 333
-    Top = 96
-    Width = 709
+    Height = 416
+    Top = 120
+    Width = 886
     Align = alClient
-    ClientHeight = 333
-    ClientWidth = 709
+    ClientHeight = 416
+    ClientWidth = 886
     TabOrder = 1
     object PageControl1: TPageControl
       Left = 1
-      Height = 331
+      Height = 414
       Top = 1
-      Width = 707
-      ActivePage = tsGrid
+      Width = 884
+      ActivePage = TabSheet2
       Align = alClient
-      TabIndex = 0
+      TabIndex = 2
       TabOrder = 0
       object tsGrid: TTabSheet
         Caption = 'Dados'
-        ClientHeight = 303
-        ClientWidth = 699
+        ClientHeight = 381
+        ClientWidth = 876
         object pncontrole: TPanel
           Left = 0
-          Height = 50
+          Height = 62
           Top = 0
-          Width = 699
+          Width = 876
           Align = alTop
-          ClientHeight = 50
-          ClientWidth = 699
+          ClientHeight = 62
+          ClientWidth = 876
           TabOrder = 0
           object DBNavigator1: TDBNavigator
-            Left = 24
-            Height = 25
-            Top = 8
-            Width = 241
+            Left = 30
+            Height = 31
+            Top = 10
+            Width = 301
             BevelOuter = bvNone
             ChildSizing.EnlargeHorizontal = crsScaleChilds
             ChildSizing.EnlargeVertical = crsScaleChilds
@@ -139,35 +140,35 @@ object frmCadPes: TfrmCadPes
             ChildSizing.ShrinkVertical = crsScaleChilds
             ChildSizing.Layout = cclLeftToRightThenTopToBottom
             ChildSizing.ControlsPerLine = 100
-            ClientHeight = 25
-            ClientWidth = 241
+            ClientHeight = 31
+            ClientWidth = 301
             DataSource = dmBase.dscadpes
             Options = []
             TabOrder = 0
             VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbRefresh]
           end
           object btEditar: TSpeedButton
-            Left = 293
-            Height = 29
-            Top = 8
-            Width = 91
+            Left = 366
+            Height = 36
+            Top = 10
+            Width = 114
             Caption = 'Editar'
             OnClick = btEditarClick
           end
           object btAdicionar: TSpeedButton
-            Left = 400
-            Height = 29
-            Top = 8
-            Width = 91
+            Left = 500
+            Height = 36
+            Top = 10
+            Width = 114
             Caption = 'Adicionar'
             OnClick = btAdicionarClick
           end
         end
         object DBGrid1: TDBGrid
           Left = 0
-          Height = 253
-          Top = 50
-          Width = 699
+          Height = 319
+          Top = 62
+          Width = 876
           Align = alClient
           Color = clWindow
           Columns = <>
@@ -178,35 +179,35 @@ object frmCadPes: TfrmCadPes
       end
       object TabSheet1: TTabSheet
         Caption = 'Exportação'
-        ClientHeight = 303
-        ClientWidth = 699
+        ClientHeight = 381
+        ClientWidth = 876
         object btExpCSV: TToggleBox
-          Left = 432
-          Height = 41
-          Top = 48
-          Width = 168
+          Left = 540
+          Height = 51
+          Top = 60
+          Width = 210
           Caption = 'Exportar para CSV Endereços'
           OnClick = btExpCSVClick
           TabOrder = 0
         end
         object Label8: TLabel
-          Left = 4
-          Height = 15
-          Top = 16
-          Width = 119
+          Left = 5
+          Height = 20
+          Top = 20
+          Width = 151
           Caption = 'Local para exportação:'
           ParentColor = False
         end
         object edFilename: TFileNameEdit
-          Left = 4
-          Height = 23
-          Top = 32
-          Width = 244
+          Left = 5
+          Height = 28
+          Top = 40
+          Width = 305
           FileName = 'cadend.csv'
           DialogTitle = 'Arquivo de Exportação de Dados'
           FilterIndex = 0
           HideDirectories = False
-          ButtonWidth = 23
+          ButtonWidth = 29
           NumGlyphs = 1
           MaxLength = 0
           TabOrder = 1
@@ -215,23 +216,23 @@ object frmCadPes: TfrmCadPes
       end
       object TabSheet2: TTabSheet
         Caption = 'Relatórios'
-        ClientHeight = 303
-        ClientWidth = 699
+        ClientHeight = 381
+        ClientWidth = 876
         object btImpRel: TToggleBox
-          Left = 24
-          Height = 41
-          Top = 16
-          Width = 216
+          Left = 30
+          Height = 51
+          Top = 20
+          Width = 270
           Caption = 'Imprimir Relatório'
           OnChange = btImpRelChange
           OnClick = btImpRelClick
           TabOrder = 0
         end
         object btImpRel1: TToggleBox
-          Left = 24
-          Height = 41
-          Top = 80
-          Width = 216
+          Left = 30
+          Height = 51
+          Top = 100
+          Width = 270
           Caption = 'Imprimir Relatório Endereço'
           OnClick = btImpRel1Click
           TabOrder = 1
@@ -239,96 +240,96 @@ object frmCadPes: TfrmCadPes
       end
       object tsRegistro: TTabSheet
         Caption = 'Registro'
-        ClientHeight = 303
-        ClientWidth = 699
+        ClientHeight = 381
+        ClientWidth = 876
         Enabled = False
         object DBText1: TDBText
-          Left = 8
-          Height = 15
-          Top = 24
-          Width = 41
+          Left = 10
+          Height = 20
+          Top = 30
+          Width = 54
           DataField = 'ind'
           DataSource = dmBase.dscadpes
           ParentColor = False
         end
         object Label4: TLabel
-          Left = 8
-          Height = 15
-          Top = 7
-          Width = 35
+          Left = 10
+          Height = 20
+          Top = 9
+          Width = 43
           Caption = 'Indice:'
           ParentColor = False
         end
         object Label5: TLabel
-          Left = 7
-          Height = 15
-          Top = 46
-          Width = 36
+          Left = 9
+          Height = 20
+          Top = 58
+          Width = 44
           Caption = 'Nome:'
           ParentColor = False
         end
         object DBEdit1: TDBEdit
-          Left = 7
-          Height = 23
-          Top = 64
-          Width = 321
+          Left = 9
+          Height = 28
+          Top = 80
+          Width = 401
           DataField = 'Nome'
           DataSource = dmBase.dscadpes
           MaxLength = 0
           TabOrder = 0
         end
         object Label6: TLabel
-          Left = 7
-          Height = 15
-          Top = 96
-          Width = 26
+          Left = 9
+          Height = 20
+          Top = 120
+          Width = 33
           Caption = 'Tipo:'
           ParentColor = False
         end
         object Label7: TLabel
-          Left = 8
-          Height = 15
-          Top = 144
-          Width = 66
+          Left = 10
+          Height = 20
+          Top = 180
+          Width = 81
           Caption = 'Documento:'
           ParentColor = False
         end
         object DBEdit2: TDBEdit
-          Left = 8
-          Height = 23
-          Top = 162
-          Width = 321
+          Left = 10
+          Height = 28
+          Top = 202
+          Width = 401
           DataField = 'Documento'
           DataSource = dmBase.dscadpes
           MaxLength = 0
           TabOrder = 2
         end
         object btSalvar: TSpeedButton
-          Left = 600
-          Height = 29
-          Top = 264
-          Width = 91
+          Left = 750
+          Height = 36
+          Top = 330
+          Width = 114
           Caption = 'Salvar'
           OnClick = btSalvarClick
         end
         object btCancelar: TSpeedButton
-          Left = 488
-          Height = 29
-          Top = 264
-          Width = 91
+          Left = 610
+          Height = 36
+          Top = 330
+          Width = 114
           Caption = 'Cancelar'
           OnClick = btCancelarClick
         end
         object DBcbtipopessoa: TRxDBComboBox
-          Left = 7
-          Height = 23
-          Top = 114
-          Width = 169
+          Left = 9
+          Height = 28
+          Top = 142
+          Width = 211
           Style = csDropDownList
           DataField = 'TipoPessoa'
           DataSource = dmBase.dscadpes
           EnableValues = True
-          ItemHeight = 15
+          ItemHeight = 20
           Items.Strings = (
             'Pessoa Física'
             'Pessoa Juridica'
@@ -343,22 +344,22 @@ object frmCadPes: TfrmCadPes
       end
       object tsEndereco: TTabSheet
         Caption = 'Endereços'
-        ClientHeight = 303
-        ClientWidth = 699
+        ClientHeight = 381
+        ClientWidth = 876
         object Panel1: TPanel
           Left = 0
-          Height = 50
+          Height = 62
           Top = 0
-          Width = 699
+          Width = 876
           Align = alTop
-          ClientHeight = 50
-          ClientWidth = 699
+          ClientHeight = 62
+          ClientWidth = 876
           TabOrder = 0
           object DBNavigator2: TDBNavigator
-            Left = 24
-            Height = 25
-            Top = 8
-            Width = 241
+            Left = 30
+            Height = 31
+            Top = 10
+            Width = 301
             BevelOuter = bvNone
             ChildSizing.EnlargeHorizontal = crsScaleChilds
             ChildSizing.EnlargeVertical = crsScaleChilds
@@ -366,51 +367,63 @@ object frmCadPes: TfrmCadPes
             ChildSizing.ShrinkVertical = crsScaleChilds
             ChildSizing.Layout = cclLeftToRightThenTopToBottom
             ChildSizing.ControlsPerLine = 100
-            ClientHeight = 25
-            ClientWidth = 241
+            ClientHeight = 31
+            ClientWidth = 301
             DataSource = dscadend
             Options = []
             TabOrder = 0
             VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbDelete, nbRefresh]
           end
           object btAdicionarEnd: TSpeedButton
-            Left = 328
-            Height = 29
-            Top = 8
-            Width = 91
+            Left = 410
+            Height = 36
+            Top = 10
+            Width = 114
             Caption = 'Adicionar'
             OnClick = btAdicionarEndClick
           end
         end
         object DBGridCadEnd: TDBGrid
           Left = 0
-          Height = 203
-          Top = 50
-          Width = 699
+          Height = 257
+          Top = 62
+          Width = 876
           Align = alClient
           Color = clWindow
           Columns = <          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'Logradouro'
               FieldName = 'Logradouro'
             end          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'Bairro'
               FieldName = 'Bairro'
             end          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'Cidade'
               FieldName = 'Cidade'
             end          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'CEP'
               FieldName = 'CEP'
             end          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'OBS'
               FieldName = 'OBS'
             end          
             item
+              MinSize = 12
+              MaxSize = 250
               Title.Caption = 'Referencia'
               FieldName = 'Referencia'
             end>
@@ -420,26 +433,26 @@ object frmCadPes: TfrmCadPes
         end
         object Panel2: TPanel
           Left = 0
-          Height = 50
-          Top = 253
-          Width = 699
+          Height = 62
+          Top = 319
+          Width = 876
           Align = alBottom
-          ClientHeight = 50
-          ClientWidth = 699
+          ClientHeight = 62
+          ClientWidth = 876
           TabOrder = 2
           object btSalvarEnd: TSpeedButton
-            Left = 600
-            Height = 29
-            Top = 8
-            Width = 91
+            Left = 750
+            Height = 36
+            Top = 10
+            Width = 114
             Caption = 'Salvar'
             OnClick = btSalvarEndClick
           end
           object btCancelarEnd: TSpeedButton
-            Left = 488
-            Height = 29
-            Top = 8
-            Width = 91
+            Left = 610
+            Height = 36
+            Top = 10
+            Width = 114
             Caption = 'Cancelar'
             OnClick = btCancelarEndClick
           end
@@ -451,12 +464,12 @@ object frmCadPes: TfrmCadPes
     DataSet = dmBase.zqrycadpes
     OnStateChange = dscadpesStateChange
     OnDataChange = dscadpesDataChange
-    Left = 128
-    Top = 226
+    Left = 160
+    Top = 283
   end
   object popGrid: TPopupMenu
-    Left = 245
-    Top = 231
+    Left = 306
+    Top = 289
     object MenuItem1: TMenuItem
       Caption = 'Vincular Endereço'
       OnClick = MenuItem1Click
@@ -465,7 +478,7 @@ object frmCadPes: TfrmCadPes
   object dscadend: TDataSource
     DataSet = dmBase.zcadend
     OnStateChange = dscadendStateChange
-    Left = 128
-    Top = 304
+    Left = 160
+    Top = 380
   end
 end
