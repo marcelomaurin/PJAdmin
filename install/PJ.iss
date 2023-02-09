@@ -22,7 +22,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
-OutputBaseFilename=PJ_setup_00
+OutputBaseFilename=PJ_setup_04
 Compression=lzma
 SolidCompression=yes
 
