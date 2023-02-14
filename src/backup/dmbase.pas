@@ -18,8 +18,14 @@ type
     dscadpes: TDataSource;
     dscadend: TDataSource;
     dscadtpdesp: TDataSource;
+    dsDespesas: TDataSource;
     tbcsv: TCSVDataset;
     dsCSV: TDataSource;
+    zcadDespesasDescricao: TStringField;
+    zcadDespesasdtCadastro: TDateField;
+    zcadDespesasDtVenc: TDateField;
+    zcadDespesasID: TLargeintField;
+    zcadDespesasValor: TFloatField;
     zcadend: TZTable;
     zcadendBairro: TStringField;
     zcadendCEP: TStringField;
@@ -30,6 +36,7 @@ type
     zcadendOBS: TStringField;
     zcadendReferencia: TStringField;
     zcadtpdesp: TZTable;
+    zcadDespesas: TZTable;
     zcadtpdespDescricao: TStringField;
     zcadtpdespID: TLargeintField;
     zcadpesDocumento: TStringField;
@@ -58,8 +65,14 @@ type
     zqrycadpesNome: TStringField;
     zqrycadpesTipoPessoa: TLargeintField;
     zcadpes: TZTable;
+    zqryDespesas: TZQuery;
     zqrycadtpdespDescricao: TStringField;
     zqrycadtpdespID: TLargeintField;
+    zqryDespesasDescricao: TStringField;
+    zqryDespesasdtCadastro: TDateField;
+    zqryDespesasDtVenc: TDateField;
+    zqryDespesasID: TLargeintField;
+    zqryDespesasValor: TFloatField;
     zreffiscalanofiscal: TLargeintField;
     zreffiscaldescricao: TStringField;
     zreffiscalmesfiscal: TLargeintField;
@@ -97,6 +110,7 @@ type
     function AbreMesFiscal( mes: string; ano: string; descricao : string): boolean;
     function OpenMesFiscal( ): boolean;
     function CloseMesFiscal( ): boolean;
+    function PesquisaDespesas(Descricao : string; mes: string; ano: string): boolean;
     function PesquisaMesFiscal(mes: string; ano: string): boolean;
     function FechaMesFiscal(): boolean;
     function PesquisaCadPes( Nome : String; TipoPessoa: integer; Documento: string) : boolean;
@@ -474,6 +488,22 @@ begin
   result:= resultado;
 end;
 
+function TdmBase.PesquisaDespesas(Descricao: string; mes: string; ano: string
+  ): boolean;
+var
+   resultado : boolean;
+begin
+     resultado := false;
+     zqryDespesas.close;
+     zqryDespesas.sql.Text := 'select * from despesas ';
+     zqryDespesas.open;
+     if not zqryDespesas.IsEmpty then
+     begin
+       resultado := true;
+     end;
+     zqryDespesas.close;
+     result := resultado;
+end;
 
 function TdmBase.PesquisaMesFiscal(mes: string; ano: string): boolean;
 var

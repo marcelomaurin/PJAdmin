@@ -7,9 +7,9 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, ExtCtrls,
   StdCtrls, dmbase, setmain, config, AberturaFiscal, funcoes, relfiscal, cadpes,
-  relcadpes, relcadend, TPDesp;
+  relcadpes, relcadend, TPDesp, Despesas;
 
-const versao = '0.03';
+const versao = '0.04';
 
 type
 
@@ -31,7 +31,7 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
-    MenuItem5: TMenuItem;
+    miDespesas: TMenuItem;
     MenuItem6: TMenuItem;
     MenuItem7: TMenuItem;
     MenuItem8: TMenuItem;
@@ -52,6 +52,7 @@ type
     procedure imgconfigClick(Sender: TObject);
     procedure MenuItem11Click(Sender: TObject);
     procedure MenuItem3Click(Sender: TObject);
+    procedure miDespesasClick(Sender: TObject);
     procedure miaberturaClick(Sender: TObject);
     procedure MICLOSEClick(Sender: TObject);
     procedure miconfigClick(Sender: TObject);
@@ -149,6 +150,15 @@ begin
   frmTPDesp.ShowModal;
   frmTPDesp.Free;
   frmTPDesp := nil;
+end;
+
+procedure Tfrmmain.miDespesasClick(Sender: TObject);
+begin
+  frmDespesas := TfrmDespesas.create(self);
+  frmDespesas.showmodal;
+  frmDespesas.free;
+  frmDespesas := n
+
 end;
 
 procedure Tfrmmain.miaberturaClick(Sender: TObject);

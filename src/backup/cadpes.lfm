@@ -111,9 +111,9 @@ object frmCadPes: TfrmCadPes
       Height = 414
       Top = 1
       Width = 884
-      ActivePage = TabSheet1
+      ActivePage = TabSheet2
       Align = alClient
-      TabIndex = 1
+      TabIndex = 2
       TabOrder = 0
       object tsGrid: TTabSheet
         Caption = 'Dados'

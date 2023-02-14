@@ -12,7 +12,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, printer4lazarus, anchordockpkg, rxnew, zcomponent, main, dmbase,
   funcoes, setmain, config, AberturaFiscal, relfiscal, cadpes, relcadpes, 
-relcadend, TPDesp
+relcadend, TPDesp, Despesas
   { you can add units after this };
 
 {$R *.res}

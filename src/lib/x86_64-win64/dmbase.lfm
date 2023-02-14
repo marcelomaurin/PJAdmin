@@ -1,10 +1,10 @@
 object dmBase: TdmBase
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 445
-  HorizontalOffset = 1246
+  Height = 554
+  HorizontalOffset = 862
   VerticalOffset = 331
-  Width = 391
+  Width = 775
   PPI = 120
   object zcon: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -13,6 +13,7 @@ object dmBase: TdmBase
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
+    Connected = True
     Port = 0
     Database = 'C:\projetos\PJAdmin\bd\pjdb.db'
     Protocol = 'sqlite-3'
@@ -214,8 +215,8 @@ object dmBase: TdmBase
     MasterFields = 'ind'
     MasterSource = dscadpes
     LinkedFields = 'IDCADPES'
-    Left = 160
-    Top = 90
+    Left = 321
+    Top = 32
     object zcadendIDCADPES: TLargeintField
       FieldKind = fkData
       FieldName = 'IDCADPES'
@@ -484,6 +485,122 @@ object dmBase: TdmBase
       ReadOnly = False
       Required = True
       Size = 40
+    end
+  end
+  object zqryDespesas: TZQuery
+    Connection = zcon
+    SQL.Strings = (
+      'select * from Despesas order by descricao'
+    )
+    Params = <>
+    UpdateMode = umUpdateAll
+    WhereMode = wmWhereAll
+    Left = 100
+    Top = 104
+    object zqryDespesasID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqryDespesasDescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'Descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 40
+    end
+    object zqryDespesasdtCadastro: TDateField
+      FieldKind = fkData
+      FieldName = 'dtCadastro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zqryDespesasDtVenc: TDateField
+      FieldKind = fkData
+      FieldName = 'DtVenc'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zqryDespesasValor: TFloatField
+      FieldKind = fkData
+      FieldName = 'Valor'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 2
+    end
+  end
+  object dsDespesas: TDataSource
+    DataSet = zqryDespesas
+    Left = 50
+    Top = 104
+  end
+  object zcadDespesas: TZTable
+    Connection = zcon
+    TableName = 'Despesas'
+    Left = 160
+    Top = 104
+    object zcadDespesasID: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zcadDespesasDescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'Descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 40
+    end
+    object zcadDespesasdtCadastro: TDateField
+      FieldKind = fkData
+      FieldName = 'dtCadastro'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object zcadDespesasDtVenc: TDateField
+      FieldKind = fkData
+      FieldName = 'DtVenc'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object zcadDespesasValor: TFloatField
+      FieldKind = fkData
+      FieldName = 'Valor'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = 2
     end
   end
 end

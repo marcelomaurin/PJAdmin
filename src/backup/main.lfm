@@ -201,8 +201,9 @@ object frmmain: Tfrmmain
           Caption = 'Tipo de Despesas'
           OnClick = MenuItem3Click
         end
-        object MenuItem5: TMenuItem
+        object miDespesas: TMenuItem
           Caption = 'Despesas'
+          OnClick = miDespesasClick
         end
       end
       object MenuItem2: TMenuItem

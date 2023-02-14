@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="72" Y="2"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="87"/>
       </Unit>
       <Unit>
         <Filename Value="main.pas"/>
@@ -18,8 +18,9 @@
         <ComponentName Value="frmmain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <CursorPos X="32" Y="13"/>
-        <UsageCount Value="86"/>
+        <TopLine Value="143"/>
+        <CursorPos X="22" Y="160"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -29,28 +30,28 @@
         <ComponentName Value="dmBase"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="654"/>
-        <CursorPos X="18" Y="666"/>
-        <UsageCount Value="86"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="489"/>
+        <CursorPos X="34" Y="491"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="funcoes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <CursorPos X="21" Y="18"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="setmain.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="54"/>
         <CursorPos X="75" Y="103"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -59,10 +60,10 @@
         <ComponentName Value="frmconfig"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="43"/>
         <CursorPos X="57" Y="67"/>
-        <UsageCount Value="86"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -73,10 +74,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AberturaFiscal"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="45"/>
         <CursorPos X="11" Y="46"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -85,9 +86,9 @@
         <ComponentName Value="frmRelfiscal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="73" Y="25"/>
-        <UsageCount Value="76"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -97,10 +98,10 @@
         <ComponentName Value="frmCadPes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="109"/>
         <CursorPos Y="119"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -110,9 +111,9 @@
         <ComponentName Value="frmrelcadpes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <CursorPos X="51" Y="18"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -122,9 +123,9 @@
         <ComponentName Value="frmrelcadend"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <CursorPos X="110" Y="29"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -135,11 +136,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TPDesp"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="31"/>
-        <CursorPos X="16" Y="36"/>
-        <UsageCount Value="22"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="48" Y="9"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -223,75 +222,22 @@
         <CursorPos Y="454"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="despesas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmDespesas"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Despesas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="25" Y="7"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="dmbase.pas"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="103" Column="48" TopLine="92"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="600" Column="32" TopLine="584"/>
-      </Position>
-      <Position>
-        <Filename Value="dmbase.pas"/>
-        <Caret Line="582" Column="25" TopLine="571"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="77" Column="17" TopLine="71"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="8" Column="9"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="8" Column="64"/>
-      </Position>
-      <Position>
-        <Filename Value="main.pas"/>
-        <Caret Line="139" Column="17" TopLine="137"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="4" Column="22"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="6" Column="26"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="17" Column="35" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="31" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="32" TopLine="9"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="12" TopLine="9"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="17" Column="30" TopLine="9"/>
-      </Position>
-      <Position>
-        <Filename Value="cadpes.pas"/>
-        <Caret Line="132" Column="50" TopLine="127"/>
-      </Position>
-      <Position>
-        <Filename Value="tpdesp.pas"/>
-        <Caret Line="17" Column="32" TopLine="7"/>
-      </Position>
       <Position>
         <Filename Value="tpdesp.pas"/>
         <Caret Line="34" Column="23" TopLine="23"/>
@@ -344,6 +290,72 @@
         <Filename Value="tpdesp.pas"/>
         <Caret Line="34" Column="12" TopLine="30"/>
       </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="13" Column="32"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="10" Column="41" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="main.pas"/>
+        <Caret Line="157" TopLine="146"/>
+      </Position>
+      <Position>
+        <Filename Value="despesas.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="666" Column="18" TopLine="654"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="675" Column="80" TopLine="661"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="674" Column="80" TopLine="660"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="673" Column="80" TopLine="659"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="678" Column="80" TopLine="664"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="677" Column="80" TopLine="663"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="676" Column="80" TopLine="662"/>
+      </Position>
+      <Position>
+        <Filename Value="dmbase.pas"/>
+        <Caret Line="113" Column="51" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="tpdesp.pas"/>
+        <Caret Line="36" Column="4" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="despesas.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="despesas.pas"/>
+        <Caret Line="38" Column="27" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="despesas.pas"/>
+        <Caret Line="19" Column="14" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="despesas.pas"/>
+        <Caret Line="7" Column="25" TopLine="7"/>
+      </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
@@ -364,14 +376,14 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="dmbase.pas"/>
-        <Line Value="498"/>
+        <Line Value="528"/>
       </Item>
       <Item>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="dmbase.pas"/>
-        <Line Value="666"/>
+        <Line Value="696"/>
       </Item>
     </BreakPoints>
   </Debugging>
